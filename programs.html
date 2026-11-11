@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Programs | Raiders Sports Academy</title>
+  <meta name="description" content="Explore Kabaddi, Kho-Kho, Fitness & Conditioning, and Tournament Preparation programs with live filters and demo batch enrollment.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Cairo:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <header class="academy-navbar">
+    <div class="academy-container navbar-inner">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logo.svg" alt="Raiders Sports Academy Logo">
+        <span class="brand-wordmark">
+          <span class="brand-title">Raiders</span>
+          <span class="brand-sub">Sports Academy</span>
+        </span>
+      </a>
+
+      <ul class="navbar-desktop-nav">
+        <li class="nav-dropdown">
+          <a href="index.html" class="nav-link-item" data-nav-page="index.html">
+            <span data-i18n-nav="home">Home</span>
+            <i data-lucide="chevron-down" style="width:15px;height:15px;"></i>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html" class="nav-dropdown-link"><span data-i18n-nav="home1">Home 1: Kabaddi</span></a>
+            <a href="home-kho-kho.html" class="nav-dropdown-link"><span data-i18n-nav="home2">Home 2: Kho-Kho</span></a>
+          </div>
+        </li>
+        <li><a href="programs.html" class="nav-link-item active" data-nav-page="programs.html" data-i18n-nav="programs">Programs</a></li>
+        <li><a href="coaches.html" class="nav-link-item" data-nav-page="coaches.html" data-i18n-nav="coaches">Coaches</a></li>
+        <li><a href="dashboard.html" class="nav-link-item" data-nav-page="dashboard.html" data-i18n-nav="dashboard">Dashboard</a></li>
+        <li><a href="index.html#about-academy" class="nav-link-item" data-i18n-nav="about">About Academy</a></li>
+        <li><a href="index.html#contact-academy" class="nav-link-item" data-i18n-nav="contact">Contact</a></li>
+      </ul>
+
+      <div class="navbar-desktop-actions">
+        <button type="button" class="icon-toggle-btn" data-theme-toggle>
+          <i data-theme-icon data-lucide="sun" style="width:16px;height:16px;"></i>
+          <span data-theme-label>Light</span>
+        </button>
+        <button type="button" class="icon-toggle-btn" data-dir-toggle>
+          <i data-lucide="languages" style="width:16px;height:16px;"></i>
+          <span data-dir-label>RTL</span>
+        </button>
+        <a href="login.html" class="nav-link-item" data-auth-guest data-i18n-nav="login">Login</a>
+        <a href="dashboard.html" class="btn-academy-yellow btn-sm-compact d-none" data-auth-player data-i18n-nav="dashboard">Player Dashboard</a>
+        <a href="register.html" class="btn-academy-primary btn-sm-compact" data-auth-guest data-i18n-nav="join">Join Academy</a>
+      </div>
+
+      <button type="button" id="mobileMenuOpenBtn" class="navbar-mobile-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+        <i data-lucide="menu" style="width:22px;height:22px;"></i>
+      </button>
+    </div>
+  </header>
+
+  <div id="mobileNavBackdrop" class="mobile-nav-backdrop"></div>
+  <aside id="mobileNavDrawer" class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logo.svg" alt="Raiders Logo">
+        <span class="brand-wordmark">
+          <span class="brand-title">Raiders</span>
+          <span class="brand-sub">Sports Academy</span>
+        </span>
+      </a>
+      <button type="button" id="mobileMenuCloseBtn" class="icon-toggle-btn" aria-label="Close Menu">
+        <i data-lucide="x" style="width:18px;height:18px;"></i>
+      </button>
+    </div>
+    <nav class="mobile-drawer-links">
+      <a href="index.html" class="mobile-drawer-link"><span data-i18n-nav="home1">Home 1: Kabaddi</span><i data-lucide="shield" style="width:16px;height:16px;"></i></a>
+      <a href="home-kho-kho.html" class="mobile-drawer-link"><span data-i18n-nav="home2">Home 2: Kho-Kho</span><i data-lucide="zap" style="width:16px;height:16px;"></i></a>
+      <a href="programs.html" class="mobile-drawer-link active"><span data-i18n-nav="programs">Programs</span><i data-lucide="dumbbell" style="width:16px;height:16px;"></i></a>
+      <a href="coaches.html" class="mobile-drawer-link"><span data-i18n-nav="coaches">Coaches</span><i data-lucide="users" style="width:16px;height:16px;"></i></a>
+      <a href="index.html#about-academy" class="mobile-drawer-link"><span data-i18n-nav="about">About Academy</span><i data-lucide="info" style="width:16px;height:16px;"></i></a>
+      <a href="index.html#contact-academy" class="mobile-drawer-link"><span data-i18n-nav="contact">Contact</span><i data-lucide="phone" style="width:16px;height:16px;"></i></a>
+      <a href="login.html" class="mobile-drawer-link" data-auth-guest><span data-i18n-nav="login">Login</span><i data-lucide="log-in" style="width:16px;height:16px;"></i></a>
+      <a href="dashboard.html" class="mobile-drawer-link"><span data-i18n-nav="dashboard">Dashboard</span><i data-lucide="layout-dashboard" style="width:16px;height:16px;"></i></a>
+    </nav>
+    <div class="mobile-drawer-controls">
+      <a href="register.html" class="btn-academy-primary w-100" data-auth-guest data-i18n-nav="join">Join Academy</a>
+      <a href="dashboard.html" class="btn-academy-yellow w-100 d-none" data-auth-player data-i18n-nav="dashboard">Open Dashboard</a>
+      <div class="mobile-toggles-row">
+        <button type="button" class="icon-toggle-btn w-100" data-theme-toggle>
+          <i data-theme-icon data-lucide="sun" style="width:16px;height:16px;"></i>
+          <span data-theme-label>Light</span>
+        </button>
+        <button type="button" class="icon-toggle-btn w-100" data-dir-toggle>
+          <i data-lucide="languages" style="width:16px;height:16px;"></i>
+          <span data-dir-label>RTL</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- DISTINCT SPLIT EDITORIAL HERO (Different from Homepage Hero) -->
+    <section class="academy-section academy-section-alt" style="padding-block:48px;">
+      <div class="academy-container">
+        <div class="split-feature-grid">
+          <div class="gsap-hero-stagger">
+            <div class="demo-badge mb-3">Configurable Demo Schedules &amp; Enrollment</div>
+            <h1 class="hero-display-title" style="color:var(--text-primary);text-shadow:none;font-size:clamp(2.5rem,5vw,4.3rem);">
+              Train With <span class="highlight-orange">Purpose.</span><br>Compete With <span class="highlight-yellow">Confidence.</span>
+            </h1>
+            <p class="text-secondary-custom fs-5 mb-4" style="max-width:560px;">
+              Choose the right training pathway and develop the skills needed to compete at your best. Filter by sport, skill level, age group, or batch timing.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#programCatalog" class="btn-academy-primary">Browse All 6 Pathways</a>
+              <a href="dashboard.html" class="btn-academy-secondary">Check My Enrolled Batches</a>
+            </div>
+          </div>
+
+          <div class="row g-3 gsap-hero-stagger">
+            <div class="col-6">
+              <div class="gallery-card" style="aspect-ratio:4/5;">
+                <img src="assets/images/kabaddi-tackling.jpg" alt="Kabaddi Defense & Tackling Training">
+                <div class="gallery-caption">
+                  <div class="fw-bold text-orange text-uppercase" style="font-size:0.74rem;">Kabaddi Track</div>
+                  <div class="fw-bold" style="font-size:0.9rem;">Beginner to Pro Mat</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="gallery-card" style="aspect-ratio:4/5;">
+                <img src="assets/images/khokho-hero.jpg" alt="Kho-Kho Championship Training">
+                <div class="gallery-caption">
+                  <div class="fw-bold text-yellow text-uppercase" style="font-size:0.74rem;">Kho-Kho Track</div>
+                  <div class="fw-bold" style="font-size:0.9rem;">Speed &amp; Pole Dives</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER BAR & 6 PROGRAM PATHWAYS -->
+    <section id="programCatalog" class="academy-section">
+      <div class="academy-container">
+        <div class="academy-card p-4 mb-5" data-aos="fade-up">
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+            <div>
+              <h2 class="card-title-std mb-1" style="font-size:1.6rem;">Filter Training Programs</h2>
+              <small class="text-secondary-custom">All schedules and batch timings shown are configurable demo records.</small>
+            </div>
+            <button type="button" id="resetFiltersBtn" class="btn-academy-secondary btn-sm-compact">
+              <i data-lucide="rotate-ccw" style="width:14px;height:14px;"></i>
+              Reset Filters
+            </button>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-sm-6 col-lg-3">
+              <label class="academy-label" for="filterSport">Sport Filter</label>
+              <select id="filterSport" class="academy-select">
+                <option value="All">All Sports</option>
+                <option value="Kabaddi">Kabaddi</option>
+                <option value="Kho-Kho">Kho-Kho</option>
+                <option value="Both Sports">Fitness &amp; Multi-Sport</option>
+              </select>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <label class="academy-label" for="filterLevel">Training Level</label>
+              <select id="filterLevel" class="academy-select">
+                <option value="All">All Levels</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+                <option value="Competitive">Competitive</option>
+              </select>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <label class="academy-label" for="filterAge">Age Group</label>
+              <select id="filterAge" class="academy-select">
+                <option value="All">All Age Groups</option>
+                <option value="U-14">U-14 (9-14 Yrs)</option>
+                <option value="U-19">U-19 (13-21 Yrs)</option>
+                <option value="Senior">Senior (15-25 Yrs)</option>
+              </select>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <label class="academy-label" for="filterTiming">Batch Timing</label>
+              <select id="filterTiming" class="academy-select">
+                <option value="All">All Timings</option>
+                <option value="Morning">Morning Batches</option>
+                <option value="Evening">Evening Batches</option>
+                <option value="Weekend">Weekend &amp; Split</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+          <div class="fw-bold" id="programsResultCount">Showing 6 of 6 Training Programs</div>
+          <span class="demo-badge">Demo Enrollment Syncs With Player Dashboard</span>
+        </div>
+
+        <div class="row g-4" id="programsGrid"></div>
+
+        <div id="programsEmptyState" class="academy-card p-5 text-center d-none">
+          <h3 class="card-title-std">No Programs Match Those Exact Filters</h3>
+          <p class="text-secondary-custom mb-3">Try resetting filters to explore all 6 Kabaddi, Kho-Kho, Fitness, and Tournament pathways.</p>
+          <div>
+            <button type="button" id="emptyResetBtn" class="btn-academy-primary btn-sm-compact">Show All Programs</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 CATEGORY SYLLABUS OVERVIEW -->
+    <section class="academy-section academy-section-alt">
+      <div class="academy-container">
+        <div class="section-header-center" data-aos="fade-up">
+          <span class="section-eyebrow">Curriculum Breakdown</span>
+          <h2 class="section-title">Six Structured Training Categories</h2>
+          <p class="section-subtitle">Every tier builds progressive technical, physical, and tactical readiness.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="academy-card p-4">
+              <span class="championship-num-badge mb-2">01</span>
+              <h4 class="card-title-std">Kabaddi Beginner</h4>
+              <p class="card-desc-std">Basic raiding skills, defensive techniques, body balance, and AKFI rules &amp; game fundamentals.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+            <div class="academy-card p-4">
+              <span class="championship-num-badge mb-2">02</span>
+              <h4 class="card-title-std">Kabaddi Advanced</h4>
+              <p class="card-desc-std">Advanced raiding variations, defensive combinations, team strategies, and live match preparation.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="academy-card p-4">
+              <span class="championship-num-badge mb-2">03</span>
+              <h4 class="card-title-std">Kho-Kho Beginner</h4>
+              <p class="card-desc-std">Running fundamentals, dodging techniques, basic chasing skills, and spatial coordination.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="academy-card p-4">
+              <span class="championship-num-badge mb-2">04</span>
+              <h4 class="card-title-std">Kho-Kho Advanced</h4>
+              <p class="card-desc-std">Advanced chasing &amp; pole dives, tactical movement, reaction speed &amp; agility, and competitive practice.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+            <div class="academy-card p-4">
+              <span class="championship-num-badge mb-2">05</span>
+              <h4 class="card-title-std">Fitness &amp; Conditioning</h4>
+              <p class="card-desc-std">Strength training, endurance, flexibility, speed &amp; agility, and injury prevention education.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="academy-card p-4">
+              <span class="championship-num-badge mb-2">06</span>
+              <h4 class="card-title-std">Tournament Preparation</h4>
+              <p class="card-desc-std">Match simulations, tactical planning, team coordination, and competition peaking readiness.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="academy-footer">
+    <div class="academy-container">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo.svg" alt="Raiders Logo">
+          <span class="brand-wordmark">
+            <span class="brand-title text-white">Raiders</span>
+            <span class="brand-sub">Sports Academy</span>
+          </span>
+        </a>
+        <div class="d-flex flex-wrap gap-3" style="font-size:0.9rem;">
+          <a href="index.html">Home 1</a>
+          <a href="home-kho-kho.html">Home 2</a>
+          <a href="programs.html">Programs</a>
+          <a href="coaches.html">Coaches</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+        <span style="font-size:0.84rem;color:#9CA3AF;">&copy; 2027 Raiders Sports Academy • Demo Mode</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Batch Enrollment Modal (Demo Mode) -->
+  <div class="modal fade academy-modal" id="enrollModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="demo-badge mb-1">Demo Batch Enrollment</span>
+            <h5 class="modal-title font-display text-uppercase fs-3 mb-0">Enroll In Training Batch</h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="programEnrollForm" novalidate>
+          <div class="modal-body">
+            <div id="enrollSuccessAlert" class="alert alert-success d-none" role="alert">
+              <strong>Demo Enrollment Confirmed!</strong> Your demo batch request has been added to <a href="dashboard.html" class="alert-link">Player Dashboard → My Batches</a>. No real payment or seat lock was processed.
+            </div>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="academy-label" for="enrollProgramSelect">Training Program *</label>
+                <select id="enrollProgramSelect" class="academy-select" required></select>
+              </div>
+              <div class="col-md-6">
+                <label class="academy-label" for="enrollBatchSelect">Available Batch *</label>
+                <select id="enrollBatchSelect" class="academy-select" required></select>
+              </div>
+              <div class="col-md-6">
+                <label class="academy-label" for="enrollPlayerName">Player Full Name *</label>
+                <input type="text" id="enrollPlayerName" class="academy-input" placeholder="e.g., Aarav Sharma" required>
+                <div class="field-error">Please enter the player's full name.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="academy-label" for="enrollPlayerPhone">Player Phone Number *</label>
+                <input type="tel" id="enrollPlayerPhone" class="academy-input" placeholder="+91 98XXXXXXXX" required>
+                <div class="field-error">Please enter a valid 10-digit phone number.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="academy-label" for="enrollPlayerEmail">Email Address *</label>
+                <input type="email" id="enrollPlayerEmail" class="academy-input" placeholder="player@example.com" required>
+                <div class="field-error">Please enter a valid email address.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="academy-label" for="enrollAge">Player Age (Years) *</label>
+                <input type="number" id="enrollAge" class="academy-input" min="7" max="35" value="17" required>
+                <div class="field-error">Age must be between 7 and 35.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="academy-label" for="enrollGuardianName">Parent / Guardian Name <span id="guardianReqTag" class="text-orange">(Required under 18)</span></label>
+                <input type="text" id="enrollGuardianName" class="academy-input" placeholder="Guardian full name">
+                <div class="field-error">Guardian name is required for players under 18.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="academy-label" for="enrollGuardianPhone">Guardian Contact Number</label>
+                <input type="tel" id="enrollGuardianPhone" class="academy-input" placeholder="+91 98XXXXXXXX">
+                <div class="field-error">Please enter guardian contact number for players under 18.</div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-academy-secondary btn-sm-compact" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" id="enrollSubmitBtn" class="btn-academy-primary btn-sm-compact">
+              Submit Demo Enrollment
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    (function () {
+      const { PROGRAMS, STORAGE_KEYS, getStoredJSON, setStoredJSON } = window.RSA_DATA;
+      const grid = document.getElementById('programsGrid');
+      const countEl = document.getElementById('programsResultCount');
+      const emptyEl = document.getElementById('programsEmptyState');
+
+      const fSport = document.getElementById('filterSport');
+      const fLevel = document.getElementById('filterLevel');
+      const fAge = document.getElementById('filterAge');
+      const fTiming = document.getElementById('filterTiming');
+
+      // Read URL params (?sport=Kabaddi or ?program=...)
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('sport')) fSport.value = params.get('sport');
+
+      function renderPrograms() {
+        const sVal = fSport.value;
+        const lVal = fLevel.value;
+        const aVal = fAge.value;
+        const tVal = fTiming.value;
+
+        const filtered = PROGRAMS.filter((p) => {
+          const matchSport = sVal === 'All' || p.sport === sVal || (sVal !== 'Both Sports' && p.sport === 'Both Sports');
+          const matchLevel = lVal === 'All' || p.level === lVal;
+          const matchAge = aVal === 'All' || p.ageGroup === aVal;
+          const matchTiming = tVal === 'All' || p.timing === tVal;
+          return matchSport && matchLevel && matchAge && matchTiming;
+        });
+
+        countEl.textContent = `Showing ${filtered.length} of ${PROGRAMS.length} Training Programs`;
+        emptyEl.classList.toggle('d-none', filtered.length > 0);
+
+        grid.innerHTML = filtered.map((p) => `
+          <div class="col-md-6 col-lg-4">
+            <article class="academy-card ${p.sport === 'Kho-Kho' ? 'sport-card-khokho' : 'sport-card-kabaddi'}">
+              <div class="card-media-action">
+                <img src="${p.image}" alt="${p.name}">
+                <span class="card-badge-corner">${p.level}</span>
+                <span class="card-badge-sport">${p.sport}</span>
+              </div>
+              <div class="card-body-flex">
+                <h3 class="card-title-std">${p.name}</h3>
+                <p class="card-desc-std">${p.summary}</p>
+                <ul class="card-meta-list">
+                  <li><i data-lucide="users"></i><span><strong>Eligible Age:</strong> ${p.ageLabel} (${p.ageGroup})</span></li>
+                  <li><i data-lucide="clock"></i><span><strong>Duration:</strong> ${p.duration} • ${p.timing}</span></li>
+                  <li><i data-lucide="calendar"></i><span><strong>Schedule:</strong> ${p.schedule}</span></li>
+                  ${p.highlights.map((h) => `<li><i data-lucide="check-circle-2"></i><span>${h}</span></li>`).join('')}
+                </ul>
+                <div class="card-footer-actions">
+                  <div>
+                    <div class="text-secondary-custom" style="font-size:0.74rem;">Demo Fee</div>
+                    <div class="fw-bold text-yellow">INR ${p.fee.toLocaleString()}</div>
+                  </div>
+                  <button type="button" class="btn-academy-primary btn-sm-compact js-open-enroll" data-program-id="${p.id}">
+                    Enroll Now
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        `).join('');
+
+        if (window.lucide) window.lucide.createIcons();
+
+        document.querySelectorAll('.js-open-enroll').forEach((btn) => {
+          btn.addEventListener('click', () => openEnrollModal(btn.dataset.programId));
+        });
+      }
+
+      function populateEnrollSelects(selectedProgId) {
+        const progSelect = document.getElementById('enrollProgramSelect');
+        const batchSelect = document.getElementById('enrollBatchSelect');
+
+        progSelect.innerHTML = PROGRAMS.map((p) => `<option value="${p.id}">${p.name} (${p.sport})</option>`).join('');
+        if (selectedProgId) progSelect.value = selectedProgId;
+
+        function updateBatches() {
+          const p = PROGRAMS.find((item) => item.id === progSelect.value) || PROGRAMS[0];
+          batchSelect.innerHTML = p.batches.map((b) => `<option value="${b}">${b}</option>`).join('');
+        }
+        progSelect.onchange = updateBatches;
+        updateBatches();
+      }
+
+      function openEnrollModal(programId) {
+        populateEnrollSelects(programId);
+        document.getElementById('enrollSuccessAlert').classList.add('d-none');
+
+        const session = window.RSA_APP.getSession();
+        if (session) {
+          document.getElementById('enrollPlayerName').value = session.fullName || '';
+          document.getElementById('enrollPlayerPhone').value = session.phone || '';
+          document.getElementById('enrollPlayerEmail').value = session.email || '';
+          document.getElementById('enrollGuardianName').value = session.guardianName || '';
+          document.getElementById('enrollGuardianPhone').value = session.emergencyContact || '';
+        }
+
+        new bootstrap.Modal(document.getElementById('enrollModal')).show();
+      }
+
+      document.getElementById('programEnrollForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const progId = document.getElementById('enrollProgramSelect').value;
+        const batch = document.getElementById('enrollBatchSelect').value;
+        const nameEl = document.getElementById('enrollPlayerName');
+        const phoneEl = document.getElementById('enrollPlayerPhone');
+        const emailEl = document.getElementById('enrollPlayerEmail');
+        const ageEl = document.getElementById('enrollAge');
+        const gNameEl = document.getElementById('enrollGuardianName');
+        const gPhoneEl = document.getElementById('enrollGuardianPhone');
+
+        [nameEl, phoneEl, emailEl, ageEl, gNameEl, gPhoneEl].forEach((el) => el.classList.remove('is-invalid'));
+
+        let valid = true;
+        if (!nameEl.value.trim()) { nameEl.classList.add('is-invalid'); valid = false; }
+        if (!/^\+?[0-9\s-]{10,15}$/.test(phoneEl.value.trim())) { phoneEl.classList.add('is-invalid'); valid = false; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())) { emailEl.classList.add('is-invalid'); valid = false; }
+        const ageVal = parseInt(ageEl.value, 10);
+        if (isNaN(ageVal) || ageVal < 7 || ageVal > 35) { ageEl.classList.add('is-invalid'); valid = false; }
+        if (ageVal < 18) {
+          if (!gNameEl.value.trim()) { gNameEl.classList.add('is-invalid'); valid = false; }
+          if (!/^\+?[0-9\s-]{10,15}$/.test(gPhoneEl.value.trim())) { gPhoneEl.classList.add('is-invalid'); valid = false; }
+        }
+        if (!valid) return;
+
+        const prog = PROGRAMS.find((p) => p.id === progId) || PROGRAMS[0];
+        const enrollments = getStoredJSON(STORAGE_KEYS.ENROLLMENTS, []);
+        enrollments.unshift({
+          id: 'enr-' + Date.now(),
+          programId: prog.id,
+          programName: prog.name,
+          sport: prog.sport,
+          batch: batch,
+          coach: prog.coach,
+          days: prog.schedule.split('•')[0].trim(),
+          time: prog.schedule.split('•')[1] ? prog.schedule.split('•')[1].replace('(Demo Schedule)', '').trim() : prog.timing,
+          status: 'Enrolled (Demo)',
+          playerName: nameEl.value.trim(),
+          enrolledAt: new Date().toISOString().slice(0, 10)
+        });
+        setStoredJSON(STORAGE_KEYS.ENROLLMENTS, enrollments);
+
+        const notifs = getStoredJSON(STORAGE_KEYS.NOTIFICATIONS, []);
+        notifs.unshift({
+          id: 'notif-' + Date.now(),
+          category: 'Batch Updates',
+          title: `Demo Enrollment Submitted: ${prog.name}`,
+          message: `You submitted a demo batch enrollment for ${batch}. View status in My Batches.`,
+          time: 'Just now',
+          read: false
+        });
+        setStoredJSON(STORAGE_KEYS.NOTIFICATIONS, notifs);
+
+        document.getElementById('enrollSuccessAlert').classList.remove('d-none');
+        window.RSA_APP.showToast('Demo Enrollment Saved', `${prog.name} added to your Player Dashboard demo batches.`, 'success');
+      });
+
+      [fSport, fLevel, fAge, fTiming].forEach((sel) => sel.addEventListener('change', renderPrograms));
+
+      function resetAll() {
+        fSport.value = 'All';
+        fLevel.value = 'All';
+        fAge.value = 'All';
+        fTiming.value = 'All';
+        renderPrograms();
+      }
+
+      document.getElementById('resetFiltersBtn').addEventListener('click', resetAll);
+      document.getElementById('emptyResetBtn').addEventListener('click', resetAll);
+
+      renderPrograms();
+
+      if (params.get('program')) {
+        const exists = PROGRAMS.some((p) => p.id === params.get('program'));
+        if (exists) openEnrollModal(params.get('program'));
+      }
+    })();
+  </script>
+</body>
+</html>
+

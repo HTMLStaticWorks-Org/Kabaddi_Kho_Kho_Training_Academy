@@ -1,0 +1,442 @@
+/* ==========================================================================
+   RAIDERS SPORTS ACADEMY – PLAYER DASHBOARD STYLESHEET
+   Completely separate layout (no public header or footer)
+   Supports: Light/Dark Theme, RTL/LTR Direction (sidebar moves to right), Mobile Drawer
+   ========================================================================== */
+
+.dashboard-shell {
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Sidebar (Fixed) */
+.dash-sidebar {
+  width: 272px;
+  flex-shrink: 0;
+  background: var(--bg-secondary);
+  border-inline-end: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  inset-inline-start: 0;
+  height: 100vh;
+  z-index: 1040;
+  transition: transform var(--transition-smooth), background-color var(--transition-fast);
+}
+
+.dash-sidebar-header {
+  height: 74px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dash-sidebar-nav {
+  padding: 16px 14px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dash-nav-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-align: start;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dash-nav-btn .nav-btn-left {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.dash-nav-btn:hover {
+  background: var(--accent-orange-soft);
+  color: var(--text-primary);
+}
+
+.dash-nav-btn.active {
+  background: var(--accent-orange);
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(255, 87, 34, 0.28);
+}
+
+.dash-nav-badge {
+  background: var(--accent-yellow);
+  color: #101317;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+
+.dash-sidebar-footer {
+  padding: 14px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Mobile Sidebar Drawer (<=1024px) */
+.dash-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1035;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+}
+
+.dash-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 1024px) {
+  .dash-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    inset-inline-start: 0;
+    transform: translateX(-100%);
+  }
+  [dir="rtl"] .dash-sidebar {
+    transform: translateX(100%);
+  }
+  .dash-sidebar.open {
+    transform: translateX(0) !important;
+  }
+}
+
+/* Main Area */
+.dash-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding-inline-start: 272px;
+  padding-top: 74px;
+}
+
+.dash-topbar {
+  height: 74px;
+  padding: 0 clamp(16px, 2.5vw, 32px);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  position: fixed;
+  top: 0;
+  inset-inline-start: 272px;
+  inset-inline-end: 0;
+  z-index: 1020;
+}
+
+@media (max-width: 1024px) {
+  .dash-main {
+    padding-inline-start: 0;
+  }
+  .dash-topbar {
+    inset-inline-start: 0;
+  }
+}
+
+.dash-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.dash-menu-trigger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .dash-menu-trigger {
+    display: inline-flex;
+  }
+}
+
+.dash-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.dash-player-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 12px 4px 6px;
+  border-radius: 999px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+}
+
+.dash-player-pill img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+@media (max-width: 575px) {
+  .dash-player-meta {
+    display: none;
+  }
+  .dash-topbar-btn-label {
+    display: none;
+  }
+}
+
+.dash-content {
+  padding: clamp(18px, 3vw, 32px);
+  max-width: 1480px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+/* Dashboard Cards & Stat Boxes */
+.dash-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  box-shadow: var(--card-shadow);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 3px solid var(--accent-orange);
+  box-shadow: var(--card-shadow);
+}
+
+.dash-stat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-orange-soft);
+  color: var(--accent-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dash-stat-value {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--text-primary);
+}
+
+/* Status Badges */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.status-present,
+.status-active,
+.status-paid,
+.status-registered {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.status-absent,
+.status-overdue {
+  background: var(--error-soft);
+  color: var(--error);
+}
+
+.status-upcoming,
+.status-pending {
+  background: var(--accent-yellow-soft);
+  color: var(--accent-yellow);
+}
+
+[data-theme="light"] .status-upcoming,
+[data-theme="light"] .status-pending {
+  color: #9A6700;
+}
+
+/* Tables */
+.dash-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.dash-table th {
+  text-align: start;
+  padding: 12px 14px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-strong);
+  white-space: nowrap;
+}
+
+.dash-table td {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+  color: var(--text-primary);
+}
+
+.dash-table tbody tr:hover {
+  background: rgba(255, 87, 34, 0.04);
+}
+
+/* Attendance Calendar Grid */
+.attendance-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.cal-day-head {
+  text-align: center;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+  padding-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.cal-day-cell {
+  aspect-ratio: 1 / 1;
+  min-height: 44px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: var(--bg-primary);
+  cursor: pointer;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.cal-day-cell:hover:not(.cal-empty) {
+  transform: scale(1.04);
+  border-color: var(--accent-orange);
+}
+
+.cal-present {
+  background: var(--success-soft);
+  border-color: rgba(34, 197, 94, 0.45);
+  color: var(--success);
+}
+
+.cal-absent {
+  background: var(--error-soft);
+  border-color: rgba(239, 68, 68, 0.45);
+  color: var(--error);
+}
+
+.cal-upcoming {
+  background: var(--accent-yellow-soft);
+  border-color: rgba(255, 212, 59, 0.45);
+  color: var(--accent-yellow);
+}
+
+[data-theme="light"] .cal-upcoming {
+  color: #9A6700;
+}
+
+.cal-empty {
+  border-color: transparent;
+  background: transparent;
+  cursor: default;
+}
+
+/* Notification Item */
+.notif-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  transition: border-color var(--transition-fast);
+}
+
+.notif-item.is-unread {
+  border-inline-start: 4px solid var(--accent-orange);
+  background: rgba(255, 87, 34, 0.05);
+}
+
+/* Module Pane Visibility */
+.dash-module-pane {
+  display: none;
+}
+
+.dash-module-pane.active {
+  display: block;
+}
+

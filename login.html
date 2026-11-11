@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Login (Demo Mode) | Raiders Sports Academy</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Cairo:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <!-- NO Public Header or Footer on Login Page -->
+  <div class="auth-split-wrapper">
+    <!-- Left Visual Panel -->
+    <div class="auth-visual-panel">
+      <img src="assets/images/hero-kabaddi.jpg" alt="Kabaddi Athlete in Action" class="auth-bg">
+      <div class="auth-visual-overlay"></div>
+
+      <div class="auth-visual-content">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo.svg" alt="Raiders Logo">
+          <span class="brand-wordmark">
+            <span class="brand-title text-white">Raiders</span>
+            <span class="brand-sub">Sports Academy</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="auth-visual-content my-auto py-4">
+        <span class="demo-badge mb-3">Player Performance Portal</span>
+        <h1 class="hero-display-title mb-3" style="font-size:clamp(2.4rem,4.5vw,3.8rem);">
+          Step Back Onto <span class="highlight-orange">The Mat.</span>
+        </h1>
+        <p class="lead text-light mb-0" style="max-width:460px;">
+          "Train Hard. Play Fearless. Become a Champion." Track your batch attendance, upcoming tournaments, and fee history inside your Player Dashboard.
+        </p>
+      </div>
+
+      <div class="auth-visual-content d-flex flex-wrap gap-2">
+        <a href="index.html" class="edition-pill">Home 1: Kabaddi</a>
+        <a href="home-kho-kho.html" class="edition-pill">Home 2: Kho-Kho</a>
+      </div>
+    </div>
+
+    <!-- Right Login Card -->
+    <div class="auth-form-panel">
+      <div class="auth-card">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <a href="index.html" class="brand-logo" aria-label="Return to Homepage">
+            <img src="assets/images/logo.svg" alt="Raiders Sports Academy Logo">
+            <span class="brand-wordmark">
+              <span class="brand-title">Raiders</span>
+              <span class="brand-sub">Player Portal</span>
+            </span>
+          </a>
+          <div class="d-flex gap-2">
+            <button type="button" class="icon-toggle-btn" data-theme-toggle>
+              <i data-theme-icon data-lucide="sun" style="width:15px;height:15px;"></i>
+            </button>
+            <button type="button" class="icon-toggle-btn" data-dir-toggle>
+              <span data-dir-label>RTL</span>
+            </button>
+          </div>
+        </div>
+
+        <h2 class="card-title-std mb-1" style="font-size:2rem;">Player Sign In</h2>
+        <p class="text-secondary-custom mb-3" style="font-size:0.88rem;">
+          Frontend Demo Authentication (stored in localStorage — not for real production security).
+        </p>
+
+        <!-- Seeded Demo Accounts Quick Fill -->
+        <div class="p-3 rounded-3 mb-3" style="background:var(--bg-primary);border:1px solid var(--border-color);">
+          <div class="fw-bold text-uppercase text-yellow mb-2" style="font-size:0.74rem;letter-spacing:0.06em;">Seeded Demo Accounts (One-Click Fill)</div>
+          <div class="d-flex flex-wrap gap-2">
+            <button type="button" class="btn-academy-secondary btn-sm-compact js-fill-demo" data-id="arjun.raider@raidersacademy.in" data-pass="Raiders@2027">
+              Kabaddi: RSA-KBD-104
+            </button>
+            <button type="button" class="btn-academy-secondary btn-sm-compact js-fill-demo" data-id="ananya.khokho@raidersacademy.in" data-pass="Raiders@2027">
+              Kho-Kho: RSA-KK-208
+            </button>
+          </div>
+        </div>
+
+        <div id="loginAlert" class="alert alert-danger d-none" role="alert"></div>
+
+        <form id="demoLoginForm" novalidate>
+          <div class="mb-3">
+            <label class="academy-label" for="loginIdentity">Email or Player ID *</label>
+            <input type="text" id="loginIdentity" class="academy-input" placeholder="e.g., arjun.raider@raidersacademy.in or RSA-KBD-104" required>
+            <div class="field-error">Please enter a valid Email address or Player ID (e.g., RSA-KBD-104).</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="academy-label" for="loginPassword">Password *</label>
+            <div class="input-group">
+              <input type="password" id="loginPassword" class="academy-input" style="border-start-end-radius:0;border-end-end-radius:0;flex:1 1 auto;width:auto;" placeholder="Enter password" required>
+              <button type="button" id="toggleLoginPass" class="icon-toggle-btn" style="border-start-start-radius:0;border-end-start-radius:0;height:auto;" aria-label="Show or Hide Password">
+                <i id="togglePassIcon" data-lucide="eye" style="width:17px;height:17px;"></i>
+              </button>
+            </div>
+            <div id="loginPassError" class="field-error" style="display:none;">Password must be at least 6 characters.</div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="rememberMeCheck" checked>
+              <label class="form-check-label text-secondary-custom" for="rememberMeCheck" style="font-size:0.86rem;">Remember Me (Demo)</label>
+            </div>
+            <button type="button" class="btn btn-link p-0 text-orange fw-semibold text-decoration-none" style="font-size:0.86rem;" data-bs-toggle="modal" data-bs-target="#forgotModal">
+              Forgot Password?
+            </button>
+          </div>
+
+          <button type="submit" class="btn-academy-primary w-100 mb-3">
+            <i data-lucide="log-in" style="width:17px;height:17px;"></i>
+            Login to Player Dashboard
+          </button>
+
+          <div class="text-center" style="font-size:0.9rem;">
+            <span class="text-secondary-custom">New to Raiders Sports Academy?</span>
+            <a href="register.html" class="text-orange fw-bold ms-1">Create Player Account</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Forgot Password Demo Modal -->
+  <div class="modal fade academy-modal" id="forgotModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title font-display text-uppercase fs-3">Demo Password Recovery</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-secondary-custom">In this frontend demo, seeded accounts use password <code>Raiders@2027</code>. Enter your email to simulate a reset request:</p>
+          <input type="email" id="forgotEmailInput" class="academy-input" placeholder="Enter your registered email">
+          <div id="forgotFeedback" class="text-success fw-semibold mt-2 d-none" style="font-size:0.86rem;">
+            Demo notice: If this were a live backend, reset instructions would be emailed. Use <code>Raiders@2027</code> or register a new demo account.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="sendForgotBtn" class="btn-academy-primary btn-sm-compact">Simulate Reset</button>
+          <button type="button" class="btn-academy-secondary btn-sm-compact" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    (function () {
+      const { STORAGE_KEYS, getStoredJSON, setStoredJSON } = window.RSA_DATA;
+      const idEl = document.getElementById('loginIdentity');
+      const passEl = document.getElementById('loginPassword');
+      const passErr = document.getElementById('loginPassError');
+      const alertBox = document.getElementById('loginAlert');
+
+      // Show redirect reason if bounced from protected dashboard
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('auth') === 'required') {
+        alertBox.className = 'alert alert-warning';
+        alertBox.textContent = 'Demo session required: Sign in with a seeded demo account or register a player account to open the Player Dashboard.';
+        alertBox.classList.remove('d-none');
+      }
+
+      document.querySelectorAll('.js-fill-demo').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          idEl.value = btn.dataset.id;
+          passEl.value = btn.dataset.pass;
+          alertBox.classList.add('d-none');
+        });
+      });
+
+      document.getElementById('toggleLoginPass').addEventListener('click', () => {
+        const isPass = passEl.type === 'password';
+        passEl.type = isPass ? 'text' : 'password';
+        const icon = document.getElementById('togglePassIcon');
+        icon.setAttribute('data-lucide', isPass ? 'eye-off' : 'eye');
+        if (window.lucide) window.lucide.createIcons();
+      });
+
+      document.getElementById('sendForgotBtn').addEventListener('click', () => {
+        document.getElementById('forgotFeedback').classList.remove('d-none');
+      });
+
+      document.getElementById('demoLoginForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        alertBox.classList.add('d-none');
+        idEl.classList.remove('is-invalid');
+        passEl.classList.remove('is-invalid');
+        passErr.style.display = 'none';
+
+        const identity = idEl.value.trim();
+        const pass = passEl.value;
+        let ok = true;
+
+        if (!identity || (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(identity) && !/^RSA-/i.test(identity))) {
+          idEl.classList.add('is-invalid');
+          ok = false;
+        }
+        if (!pass || pass.length < 6) {
+          passEl.classList.add('is-invalid');
+          passErr.style.display = 'block';
+          ok = false;
+        }
+        if (!ok) return;
+
+        const players = getStoredJSON(STORAGE_KEYS.PLAYERS, []);
+        const found = players.find((p) =>
+          (p.email.toLowerCase() === identity.toLowerCase() || p.playerId.toLowerCase() === identity.toLowerCase()) &&
+          p.password === pass
+        );
+
+        if (!found) {
+          alertBox.className = 'alert alert-danger';
+          alertBox.textContent = 'Invalid demo credentials. Try one of the seeded demo accounts above or register a new demo account.';
+          alertBox.classList.remove('d-none');
+          return;
+        }
+
+        setStoredJSON(STORAGE_KEYS.SESSION, {
+          ...found,
+          rememberMe: document.getElementById('rememberMeCheck').checked,
+          loggedInAt: new Date().toISOString()
+        });
+        window.location.href = 'dashboard.html';
+      });
+    })();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Coaches | Raiders Sports Academy</title>
+  <meta name="description" content="Editorial profile of Raiders Sports Academy's Kabaddi, Kho-Kho, Tactical, and Strength & Conditioning coaches.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Cairo:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <header class="academy-navbar">
+    <div class="academy-container navbar-inner">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logo.svg" alt="Raiders Sports Academy Logo">
+        <span class="brand-wordmark">
+          <span class="brand-title">Raiders</span>
+          <span class="brand-sub">Sports Academy</span>
+        </span>
+      </a>
+
+      <ul class="navbar-desktop-nav">
+        <li class="nav-dropdown">
+          <a href="index.html" class="nav-link-item" data-nav-page="index.html">
+            <span data-i18n-nav="home">Home</span>
+            <i data-lucide="chevron-down" style="width:15px;height:15px;"></i>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html" class="nav-dropdown-link"><span data-i18n-nav="home1">Home 1: Kabaddi</span></a>
+            <a href="home-kho-kho.html" class="nav-dropdown-link"><span data-i18n-nav="home2">Home 2: Kho-Kho</span></a>
+          </div>
+        </li>
+        <li><a href="programs.html" class="nav-link-item" data-nav-page="programs.html" data-i18n-nav="programs">Programs</a></li>
+        <li><a href="coaches.html" class="nav-link-item active" data-nav-page="coaches.html" data-i18n-nav="coaches">Coaches</a></li>
+        <li><a href="dashboard.html" class="nav-link-item" data-nav-page="dashboard.html" data-i18n-nav="dashboard">Dashboard</a></li>
+        <li><a href="index.html#about-academy" class="nav-link-item" data-i18n-nav="about">About Academy</a></li>
+        <li><a href="index.html#contact-academy" class="nav-link-item" data-i18n-nav="contact">Contact</a></li>
+      </ul>
+
+      <div class="navbar-desktop-actions">
+        <button type="button" class="icon-toggle-btn" data-theme-toggle>
+          <i data-theme-icon data-lucide="sun" style="width:16px;height:16px;"></i>
+          <span data-theme-label>Light</span>
+        </button>
+        <button type="button" class="icon-toggle-btn" data-dir-toggle>
+          <i data-lucide="languages" style="width:16px;height:16px;"></i>
+          <span data-dir-label>RTL</span>
+        </button>
+        <a href="login.html" class="nav-link-item" data-auth-guest data-i18n-nav="login">Login</a>
+        <a href="dashboard.html" class="btn-academy-yellow btn-sm-compact d-none" data-auth-player data-i18n-nav="dashboard">Player Dashboard</a>
+        <a href="register.html" class="btn-academy-primary btn-sm-compact" data-auth-guest data-i18n-nav="join">Join Academy</a>
+      </div>
+
+      <button type="button" id="mobileMenuOpenBtn" class="navbar-mobile-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+        <i data-lucide="menu" style="width:22px;height:22px;"></i>
+      </button>
+    </div>
+  </header>
+
+  <div id="mobileNavBackdrop" class="mobile-nav-backdrop"></div>
+  <aside id="mobileNavDrawer" class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logo.svg" alt="Raiders Logo">
+        <span class="brand-wordmark">
+          <span class="brand-title">Raiders</span>
+          <span class="brand-sub">Sports Academy</span>
+        </span>
+      </a>
+      <button type="button" id="mobileMenuCloseBtn" class="icon-toggle-btn" aria-label="Close Menu">
+        <i data-lucide="x" style="width:18px;height:18px;"></i>
+      </button>
+    </div>
+    <nav class="mobile-drawer-links">
+      <a href="index.html" class="mobile-drawer-link"><span data-i18n-nav="home1">Home 1: Kabaddi</span><i data-lucide="shield" style="width:16px;height:16px;"></i></a>
+      <a href="home-kho-kho.html" class="mobile-drawer-link"><span data-i18n-nav="home2">Home 2: Kho-Kho</span><i data-lucide="zap" style="width:16px;height:16px;"></i></a>
+      <a href="programs.html" class="mobile-drawer-link"><span data-i18n-nav="programs">Programs</span><i data-lucide="dumbbell" style="width:16px;height:16px;"></i></a>
+      <a href="coaches.html" class="mobile-drawer-link active"><span data-i18n-nav="coaches">Coaches</span><i data-lucide="users" style="width:16px;height:16px;"></i></a>
+      <a href="index.html#about-academy" class="mobile-drawer-link"><span data-i18n-nav="about">About Academy</span><i data-lucide="info" style="width:16px;height:16px;"></i></a>
+      <a href="index.html#contact-academy" class="mobile-drawer-link"><span data-i18n-nav="contact">Contact</span><i data-lucide="phone" style="width:16px;height:16px;"></i></a>
+      <a href="login.html" class="mobile-drawer-link" data-auth-guest><span data-i18n-nav="login">Login</span><i data-lucide="log-in" style="width:16px;height:16px;"></i></a>
+      <a href="dashboard.html" class="mobile-drawer-link"><span data-i18n-nav="dashboard">Dashboard</span><i data-lucide="layout-dashboard" style="width:16px;height:16px;"></i></a>
+    </nav>
+    <div class="mobile-drawer-controls">
+      <a href="register.html" class="btn-academy-primary w-100" data-auth-guest data-i18n-nav="join">Join Academy</a>
+      <a href="dashboard.html" class="btn-academy-yellow w-100 d-none" data-auth-player data-i18n-nav="dashboard">Open Dashboard</a>
+      <div class="mobile-toggles-row">
+        <button type="button" class="icon-toggle-btn w-100" data-theme-toggle>
+          <i data-theme-icon data-lucide="sun" style="width:16px;height:16px;"></i>
+          <span data-theme-label>Light</span>
+        </button>
+        <button type="button" class="icon-toggle-btn w-100" data-dir-toggle>
+          <i data-lucide="languages" style="width:16px;height:16px;"></i>
+          <span data-dir-label>RTL</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- EDITORIAL HERO -->
+    <section class="academy-section academy-section-alt text-center" style="padding-block:64px;">
+      <div class="academy-container">
+        <div class="demo-badge mb-3 gsap-hero-stagger">Demo Coaching Roster • Editorial Showcase</div>
+        <h1 class="hero-display-title mx-auto gsap-hero-stagger" style="color:var(--text-primary);text-shadow:none;max-width:920px;font-size:clamp(2.6rem,5.4vw,4.6rem);">
+          Learn From Coaches Who <span class="highlight-orange">Understand</span> The Game.
+        </h1>
+        <p class="text-secondary-custom mx-auto fs-5 mb-0 gsap-hero-stagger" style="max-width:680px;">
+          Our mentoring bench unites former national-level Kabaddi raiders, Kho-Kho speed tacticians, and strength specialists committed to disciplined athletic growth.
+        </p>
+      </div>
+    </section>
+
+    <!-- EDITORIAL COACHES ROSTER -->
+    <section class="academy-section">
+      <div class="academy-container">
+        <div class="d-flex flex-column gap-4" id="coachesEditorialList"></div>
+      </div>
+    </section>
+
+    <!-- COACHING PHILOSOPHY SECTION -->
+    <section class="academy-section academy-section-alt">
+      <div class="academy-container">
+        <div class="section-header-center" data-aos="fade-up">
+          <span class="section-eyebrow">Six Core Values</span>
+          <h2 class="section-title">Our Coaching Philosophy</h2>
+          <p class="section-subtitle">Every practice block is anchored by six non-negotiable standards on and off the mat.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="academy-card p-4">
+              <div class="pillar-icon-box mb-3"><i data-lucide="shield-check"></i></div>
+              <h4 class="card-title-std">Discipline</h4>
+              <p class="card-desc-std mb-0">Punctuality, mat etiquette, consistent warm-ups, and respect for officials and teammates.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+            <div class="academy-card p-4">
+              <div class="pillar-icon-box mb-3"><i data-lucide="crosshair"></i></div>
+              <h4 class="card-title-std">Technical Excellence</h4>
+              <p class="card-desc-std mb-0">Repetitive mastery of clean footwork, ankle holds, Kho deliveries, and safe pole-dive landings.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="academy-card p-4">
+              <div class="pillar-icon-box mb-3"><i data-lucide="activity"></i></div>
+              <h4 class="card-title-std">Physical Development</h4>
+              <p class="card-desc-std mb-0">Age-appropriate strength, sprint acceleration, joint resilience, and injury-prevention habits.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="academy-card p-4">
+              <div class="pillar-icon-box mb-3"><i data-lucide="cpu"></i></div>
+              <h4 class="card-title-std">Tactical Intelligence</h4>
+              <p class="card-desc-std mb-0">Reading opponent formations, clock management, Do-or-Die raid selection, and chain timing.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+            <div class="academy-card p-4">
+              <div class="pillar-icon-box mb-3"><i data-lucide="users"></i></div>
+              <h4 class="card-title-std">Teamwork</h4>
+              <p class="card-desc-std mb-0">Vocal mat communication, trust between corner and cover defenders, and selfless Kho switches.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="academy-card p-4">
+              <div class="pillar-icon-box mb-3"><i data-lucide="heart-handshake"></i></div>
+              <h4 class="card-title-std">Sportsmanship</h4>
+              <p class="card-desc-std mb-0">Grace in victory, resilience in defeat, and lifelong pride in indigenous Indian sports culture.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6-STEP TRAINING METHODOLOGY -->
+    <section class="academy-section">
+      <div class="academy-container">
+        <div class="section-header-center" data-aos="fade-up">
+          <span class="section-eyebrow">Athlete Development Pathway</span>
+          <h2 class="section-title">6-Step Training Methodology</h2>
+          <p class="section-subtitle">How we take every player from initial evaluation to championship readiness.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-4" data-aos="fade-up">
+            <div class="academy-card p-4">
+              <span class="championship-num-badge mb-2">01</span>
+              <h4 class="card-title-std">Skill Assessment</h4>
+              <p class="card-desc-std mb-0">Baseline evaluation of sprint speed, balance, flexibility, and current Kabaddi or Kho-Kho fundamentals.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+            <div class="academy-card p-4">
+              <span class="championship-num-badge mb-2">02</span>
+              <h4 class="card-title-std">Technical Training</h4>
+              <p class="card-desc-std mb-0">Focused biomechanical drills for raiding touches, tackle grips, Kho tags, and zigzag footwork.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="academy-card p-4">
+              <span class="championship-num-badge mb-2">03</span>
+              <h4 class="card-title-std">Physical Conditioning</h4>
+              <p class="card-desc-std mb-0">Progressive agility ladders, core strength, anaerobic intervals, and mobility recovery blocks.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4" data-aos="fade-up">
+            <div class="academy-card p-4">
+              <span class="championship-num-badge mb-2">04</span>
+              <h4 class="card-title-std">Tactical Practice</h4>
+              <p class="card-desc-std mb-0">Situational squad scenarios, super-tackle traps, and video breakdown of real match footage.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+            <div class="academy-card p-4">
+              <span class="championship-num-badge mb-2">05</span>
+              <h4 class="card-title-std">Match Preparation</h4>
+              <p class="card-desc-std mb-0">Referee-officiated practice matches with official clocks, scoring tables, and pressure drills.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="academy-card p-4">
+              <span class="championship-num-badge mb-2">06</span>
+              <h4 class="card-title-std">Tournament Participation</h4>
+              <p class="card-desc-std mb-0">District, university, and state championship competition backed by coach sideline analysis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COACHES CTA -->
+    <section class="academy-section academy-section-alt">
+      <div class="academy-container">
+        <div class="cta-championship-banner" data-aos="fade-up">
+          <h2 class="hero-display-title mb-3" style="font-size:clamp(2.2rem,4.5vw,3.6rem);">
+            Ready to Train With Our Team?
+          </h2>
+          <p class="text-secondary-custom mx-auto mb-4" style="max-width:580px;color:#D1D5DB !important;">
+            Create your demo player account and get matched with the right Kabaddi or Kho-Kho training batch.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="register.html" class="btn-academy-primary">Join Academy</a>
+            <a href="programs.html" class="btn-academy-yellow">Explore Programs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="academy-footer">
+    <div class="academy-container">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo.svg" alt="Raiders Logo">
+          <span class="brand-wordmark">
+            <span class="brand-title text-white">Raiders</span>
+            <span class="brand-sub">Sports Academy</span>
+          </span>
+        </a>
+        <div class="d-flex flex-wrap gap-3" style="font-size:0.9rem;">
+          <a href="index.html">Home 1</a>
+          <a href="home-kho-kho.html">Home 2</a>
+          <a href="programs.html">Programs</a>
+          <a href="coaches.html">Coaches</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+        <span style="font-size:0.84rem;color:#9CA3AF;">&copy; 2027 Raiders Sports Academy • Demo Mode</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Coach Detailed Modal -->
+  <div class="modal fade academy-modal" id="coachDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title font-display text-uppercase fs-3" id="coachModalName">Coach Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="coachModalContent"></div>
+        <div class="modal-footer">
+          <a href="programs.html" class="btn-academy-primary btn-sm-compact">Train With This Coach</a>
+          <button type="button" class="btn-academy-secondary btn-sm-compact" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    (function () {
+      const { COACHES } = window.RSA_DATA;
+      const list = document.getElementById('coachesEditorialList');
+      list.innerHTML = COACHES.map((c, idx) => `
+        <article class="academy-card p-3 p-md-4" data-aos="fade-up" data-aos-delay="${idx * 50}">
+          <div class="row g-4 align-items-center ${idx % 2 === 1 ? 'flex-lg-row-reverse' : ''}">
+            <div class="col-lg-4">
+              <div class="card-media-portrait rounded-3 overflow-hidden">
+                <img src="${c.image}" alt="${c.name}">
+                <span class="card-badge-sport">${c.category}</span>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                <span class="text-orange fw-bold text-uppercase" style="font-size:0.86rem;letter-spacing:0.08em;">${c.role}</span>
+                <span class="demo-badge">${c.experience}</span>
+              </div>
+              <h2 class="section-title mb-2" style="font-size:2.2rem;">${c.name}</h2>
+              <p class="mb-2"><strong>Qualification:</strong> <span class="text-secondary-custom">${c.qualification}</span></p>
+              <p class="mb-2"><strong>Playing Background:</strong> <span class="text-secondary-custom">${c.background}</span></p>
+              <p class="mb-3"><strong>Coaching Philosophy:</strong> <span class="text-secondary-custom fst-italic">"${c.philosophy}"</span></p>
+              <div class="d-flex flex-wrap gap-2 mb-4">
+                ${c.specialties.map((s) => `<span class="badge bg-dark border border-secondary px-3 py-2">${s}</span>`).join('')}
+              </div>
+              <button type="button" class="btn-academy-primary btn-sm-compact js-open-coach" data-coach-id="${c.id}">
+                View Profile
+              </button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+
+      document.querySelectorAll('.js-open-coach').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const c = COACHES.find((item) => item.id === btn.dataset.coachId);
+          if (!c) return;
+          document.getElementById('coachModalName').textContent = c.name;
+          document.getElementById('coachModalContent').innerHTML = `
+            <div class="row g-4 align-items-center">
+              <div class="col-md-5">
+                <img src="${c.image}" alt="${c.name}" class="w-100 rounded-3" style="aspect-ratio:4/5;object-fit:cover;object-position:top center;">
+              </div>
+              <div class="col-md-7">
+                <div class="text-orange fw-bold text-uppercase mb-1">${c.role}</div>
+                <div class="demo-badge mb-3">${c.experience}</div>
+                <p><strong>Specialization:</strong> ${c.category}</p>
+                <p><strong>Qualification:</strong> ${c.qualification}</p>
+                <p><strong>Background:</strong> ${c.background}</p>
+                <p class="mb-0"><strong>Philosophy:</strong> "${c.philosophy}"</p>
+              </div>
+            </div>
+          `;
+          new bootstrap.Modal(document.getElementById('coachDetailModal')).show();
+        });
+      });
+
+      if (window.lucide) window.lucide.createIcons();
+    })();
+  </script>
+</body>
+</html>
+
