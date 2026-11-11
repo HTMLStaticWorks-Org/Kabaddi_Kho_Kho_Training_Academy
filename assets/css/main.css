@@ -4,6 +4,12 @@
    Supports: Light/Dark Theme, RTL/LTR Direction, 360px to 3840px Responsive
    ========================================================================== */
 
+/* Keep [data-aos] sections visible before AOS initializes or if CDN scripts fail */
+html:not(.rsa-aos-active) [data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 :root {
   --accent-orange: #FF5722;
   --accent-orange-hover: #E64A19;

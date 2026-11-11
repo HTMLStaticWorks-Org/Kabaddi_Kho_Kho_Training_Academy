@@ -453,13 +453,17 @@
   }
 
   function initAOS() {
-    if (window.AOS) {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (window.AOS && !reduced) {
       AOS.init({
-        duration: 650,
+        duration: 550,
         once: true,
-        offset: 60,
-        disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        offset: 20
       });
+      document.documentElement.classList.add('rsa-aos-active');
+      setTimeout(() => {
+        if (window.AOS) window.AOS.refreshHard();
+      }, 150);
     }
   }
 
