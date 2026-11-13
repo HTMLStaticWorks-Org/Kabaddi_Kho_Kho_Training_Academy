@@ -15,7 +15,21 @@
   } = window.RSA_DATA;
 
   let session = window.RSA_APP.getSession();
-  if (!session || !session.playerId) return;
+  if (!session || !session.playerId) {
+    const players = getStoredJSON(STORAGE_KEYS.PLAYERS, []);
+    session = players[0] || {
+      id: 'RSA-KBD-104',
+      playerId: 'RSA-KBD-104',
+      fullName: 'Arjun Deshmukh',
+      name: 'Arjun Deshmukh',
+      email: 'arjun.raider@raidersacademy.in',
+      sport: 'Kabaddi',
+      level: 'Advanced',
+      batch: 'Morning (06:00 AM - 07:30 AM)',
+      photo: 'assets/images/champ-kabaddi-1.jpg'
+    };
+    setStoredJSON(STORAGE_KEYS.SESSION, session);
+  }
 
   let barChart = null;
   let radarChart = null;
@@ -70,16 +84,38 @@
   /* -------------------- Sync Player Header & Overview -------------------- */
   function syncPlayerUI() {
     session = window.RSA_APP.getSession();
-    const photo = session.photo || 'assets/images/champ-kabaddi-1.jpg';
-    document.getElementById('topbarPlayerPhoto').src = photo;
-    document.getElementById('topbarPlayerName').textContent = session.fullName;
-    document.getElementById('topbarPlayerId').textContent = session.playerId;
+    const photo = (session && session.photo) ? session.photo : 'assets/images/champ-kabaddi-1.jpg';
+    const fullName = (session && (session.fullName || session.name)) ? (session.fullName || session.name) : 'Arjun Deshmukh';
+    const playerId = (session && session.playerId) ? session.playerId : 'RSA-KBD-104';
+    const sport = (session && session.sport) ? session.sport : 'Kabaddi';
+    const level = (session && session.level) ? session.level : 'Advanced';
+    const batch = (session && session.batch) ? session.batch : 'Morning (06:00 AM - 07:30 AM)';
 
-    document.getElementById('ovPlayerPhoto').src = photo;
-    document.getElementById('ovWelcomeHeading').textContent = `Welcome Back, ${session.fullName.split(' ')[0]}!`;
-    document.getElementById('ovProfileSummary').textContent = `${session.playerId} • ${session.sport} • ${session.level} Tier`;
-    document.getElementById('ovStatSport').textContent = session.sport;
-    document.getElementById('ovStatBatch').textContent = session.batch;
+    const sPhoto = document.getElementById('sidebarPlayerPhoto');
+    const sName = document.getElementById('sidebarPlayerName');
+    const sId = document.getElementById('sidebarPlayerId');
+    if (sPhoto) sPhoto.src = photo;
+    if (sName) sName.textContent = fullName;
+    if (sId) sId.textContent = playerId;
+
+    const tPhoto = document.getElementById('topbarPlayerPhoto');
+    const tName = document.getElementById('topbarPlayerName');
+    const tId = document.getElementById('topbarPlayerId');
+    if (tPhoto) tPhoto.src = photo;
+    if (tName) tName.textContent = fullName;
+    if (tId) tId.textContent = playerId;
+
+    const ovPhoto = document.getElementById('ovPlayerPhoto');
+    if (ovPhoto) ovPhoto.src = photo;
+    const nameOnly = fullName.split(' ')[0];
+    const welcomeEl = document.getElementById('ovWelcomeHeading');
+    if (welcomeEl) welcomeEl.textContent = `Welcome Back, ${nameOnly}!`;
+    const summaryEl = document.getElementById('ovProfileSummary');
+    if (summaryEl) summaryEl.textContent = `${playerId} • ${sport} • ${level} Tier`;
+    const sportEl = document.getElementById('ovStatSport');
+    if (sportEl) sportEl.textContent = sport;
+    const batchEl = document.getElementById('ovStatBatch');
+    if (batchEl) batchEl.textContent = batch;
 
     const regs = getStoredJSON(STORAGE_KEYS.TOURNAMENT_REGS, []);
     if (regs.length) {

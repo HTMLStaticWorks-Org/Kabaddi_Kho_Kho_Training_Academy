@@ -165,110 +165,29 @@
       }, { passive: true });
     }
 
-    // Inject 3D Edge Navbar hover sensor & bottom-right MENU dock on public pages
-    let hoverZone = document.getElementById('edge3dHoverZone');
-    let dockBtn = document.getElementById('edge3dDockBtn');
-    if (navbar && drawer && !hoverZone) {
-      hoverZone = document.createElement('div');
-      hoverZone.id = 'edge3dHoverZone';
-      hoverZone.className = 'edge3d-hover-zone';
-      hoverZone.setAttribute('aria-hidden', 'true');
-      document.body.appendChild(hoverZone);
-
-      dockBtn = document.createElement('button');
-      dockBtn.type = 'button';
-      dockBtn.id = 'edge3dDockBtn';
-      dockBtn.className = 'edge3d-dock-btn';
-      dockBtn.setAttribute('aria-label', 'Open 3D Edge Navigation Menu');
-      dockBtn.setAttribute('aria-expanded', 'false');
-      dockBtn.setAttribute('aria-controls', 'mobileNavDrawer');
-      dockBtn.innerHTML = `
-        <span class="edge3d-dock-rail" aria-hidden="true"></span>
-        <span class="edge3d-dock-text" data-i18n-nav="menuLabel">MENU</span>
-        <span class="edge3d-dock-icon" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </span>
-      `;
-      document.body.appendChild(dockBtn);
-
-      const header = drawer.querySelector('.mobile-drawer-header');
-      if (header && !drawer.querySelector('.edge3d-panel-tag')) {
-        const tag = document.createElement('div');
-        tag.className = 'edge3d-panel-tag';
-        tag.innerHTML = '<i data-lucide="box" style="width:13px;height:13px;"></i><span>3D Edge Nav</span>';
-        header.insertAdjacentElement('afterend', tag);
-      }
-    }
-
-    let pinnedOpen = false;
-    let hoverCloseTimer = null;
-
-    function setDrawer(open, mode = 'pin') {
+    // Clean, direct drawer toggling (no hover trigger while scrolling)
+    function setDrawer(open) {
       if (!drawer || !backdrop) return;
-      clearTimeout(hoverCloseTimer);
-
-      const isHoverMode = open && mode === 'hover' && !pinnedOpen;
-      if (!open) {
-        pinnedOpen = false;
-      } else if (mode === 'pin') {
-        pinnedOpen = true;
-      }
-
       drawer.classList.toggle('open', open);
       backdrop.classList.toggle('open', open);
-      backdrop.classList.toggle('is-hover-mode', isHoverMode);
-      document.body.classList.toggle('edge3d-panel-open', open);
-      document.body.style.overflow = open && pinnedOpen ? 'hidden' : '';
+      document.body.style.overflow = open ? 'hidden' : '';
 
       if (toggleBtn) toggleBtn.setAttribute('aria-expanded', String(open));
-      if (dockBtn) dockBtn.setAttribute('aria-expanded', String(open));
     }
 
-    function openByHover() {
-      if (window.innerWidth >= 1025) return;
-      clearTimeout(hoverCloseTimer);
-      if (!pinnedOpen) {
-        setDrawer(true, 'hover');
-      }
-    }
+    if (toggleBtn) toggleBtn.addEventListener('click', () => setDrawer(true));
+    if (closeBtn) closeBtn.addEventListener('click', () => setDrawer(false));
+    if (backdrop) backdrop.addEventListener('click', () => setDrawer(false));
 
-    function scheduleHoverClose() {
-      clearTimeout(hoverCloseTimer);
-      if (pinnedOpen) return;
-      hoverCloseTimer = setTimeout(() => {
-        if (!pinnedOpen) setDrawer(false, 'hover');
-      }, 180);
-    }
-
-    if (hoverZone) {
-      hoverZone.addEventListener('mouseenter', openByHover);
-      hoverZone.addEventListener('mouseleave', scheduleHoverClose);
-    }
-    if (dockBtn) {
-      dockBtn.addEventListener('mouseenter', openByHover);
-      dockBtn.addEventListener('mouseleave', scheduleHoverClose);
-      dockBtn.addEventListener('click', () => {
-        const currentlyPinned = pinnedOpen && drawer && drawer.classList.contains('open');
-        setDrawer(!currentlyPinned, 'pin');
-      });
-    }
     if (drawer) {
-      drawer.addEventListener('mouseenter', () => {
-        clearTimeout(hoverCloseTimer);
-      });
-      drawer.addEventListener('mouseleave', scheduleHoverClose);
       drawer.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => setDrawer(false, 'pin'));
+        link.addEventListener('click', () => setDrawer(false));
       });
     }
-
-    if (toggleBtn) toggleBtn.addEventListener('click', () => setDrawer(true, 'pin'));
-    if (closeBtn) closeBtn.addEventListener('click', () => setDrawer(false, 'pin'));
-    if (backdrop) backdrop.addEventListener('click', () => setDrawer(false, 'pin'));
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && drawer && drawer.classList.contains('open')) {
-        setDrawer(false, 'pin');
+        setDrawer(false);
       }
     });
 

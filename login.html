@@ -68,20 +68,17 @@
 
         <h2 class="card-title-std mb-1" style="font-size:2rem;">Player Sign In</h2>
         <p class="text-secondary-custom mb-3" style="font-size:0.88rem;">
-          Frontend Demo Authentication (stored in localStorage — not for real production security).
+          Frontend Demo Authentication (stored in localStorage — instant demo dashboard access).
         </p>
 
-        <!-- Seeded Demo Accounts Quick Fill -->
-        <div class="p-3 rounded-3 mb-3" style="background:var(--bg-primary);border:1px solid var(--border-color);">
-          <div class="fw-bold text-uppercase text-yellow mb-2" style="font-size:0.74rem;letter-spacing:0.06em;">Seeded Demo Accounts (One-Click Fill)</div>
-          <div class="d-flex flex-wrap gap-2">
-            <button type="button" class="btn-academy-secondary btn-sm-compact js-fill-demo" data-id="arjun.raider@raidersacademy.in" data-pass="Raiders@2027">
-              Kabaddi: RSA-KBD-104
-            </button>
-            <button type="button" class="btn-academy-secondary btn-sm-compact js-fill-demo" data-id="ananya.khokho@raidersacademy.in" data-pass="Raiders@2027">
-              Kho-Kho: RSA-KK-208
-            </button>
-          </div>
+        <!-- Direct Normal Dashboard Entry Button (No Credentials Required) -->
+        <button type="button" id="quickEnterDashBtn" class="btn-academy-yellow w-100 mb-3" style="font-weight:700;padding:12px 18px;">
+          <i data-lucide="layout-dashboard" style="width:18px;height:18px;"></i>
+          <span>Direct Demo Access • Open Player Dashboard</span>
+        </button>
+
+        <div class="auth-divider mb-3">
+          <span>Or Sign In With Account</span>
         </div>
 
         <div id="loginAlert" class="alert alert-danger d-none" role="alert"></div>
@@ -191,13 +188,30 @@
         alertBox.classList.remove('d-none');
       }
 
-      document.querySelectorAll('.js-fill-demo').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          idEl.value = btn.dataset.id;
-          passEl.value = btn.dataset.pass;
-          alertBox.classList.add('d-none');
+      // Direct Dashboard Entry Way
+      const quickBtn = document.getElementById('quickEnterDashBtn');
+      if (quickBtn) {
+        quickBtn.addEventListener('click', () => {
+          const players = getStoredJSON(STORAGE_KEYS.PLAYERS, []);
+          const player = players[0] || {
+            id: 'RSA-KBD-104',
+            playerId: 'RSA-KBD-104',
+            fullName: 'Arjun Deshmukh',
+            name: 'Arjun Deshmukh',
+            email: 'arjun.raider@raidersacademy.in',
+            sport: 'Kabaddi',
+            level: 'Advanced',
+            batch: 'Morning (06:00 AM - 07:30 AM)',
+            photo: 'assets/images/champ-kabaddi-1.jpg'
+          };
+          setStoredJSON(STORAGE_KEYS.SESSION, {
+            ...player,
+            rememberMe: true,
+            loggedInAt: new Date().toISOString()
+          });
+          window.location.href = 'dashboard.html';
         });
-      });
+      }
 
       document.getElementById('toggleLoginPass').addEventListener('click', () => {
         const isPass = passEl.type === 'password';
@@ -234,16 +248,24 @@
         if (!ok) return;
 
         const players = getStoredJSON(STORAGE_KEYS.PLAYERS, []);
-        const found = players.find((p) =>
+        let found = players.find((p) =>
           (p.email.toLowerCase() === identity.toLowerCase() || p.playerId.toLowerCase() === identity.toLowerCase()) &&
           p.password === pass
         );
 
         if (!found) {
-          alertBox.className = 'alert alert-danger';
-          alertBox.textContent = 'Invalid demo credentials. Try one of the seeded demo accounts above or register a new demo account.';
-          alertBox.classList.remove('d-none');
-          return;
+          // Flexible demo entry fallback
+          found = {
+            id: 'RSA-DEMO-' + Math.floor(100 + Math.random() * 900),
+            playerId: 'RSA-DEMO-' + Math.floor(100 + Math.random() * 900),
+            fullName: identity.includes('@') ? identity.split('@')[0].replace('.', ' ') : 'Demo Athlete',
+            name: identity.includes('@') ? identity.split('@')[0].replace('.', ' ') : 'Demo Athlete',
+            email: identity.includes('@') ? identity : 'player@raidersacademy.in',
+            sport: 'Kabaddi',
+            level: 'Advanced',
+            batch: 'Morning (06:00 AM - 07:30 AM)',
+            photo: 'assets/images/champ-kabaddi-1.jpg'
+          };
         }
 
         setStoredJSON(STORAGE_KEYS.SESSION, {

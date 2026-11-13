@@ -404,13 +404,13 @@ section[id] {
   }
 }
 
-/* Floating Edge MENU Dock (visible on mobile / touch if enabled) */
-.edge3d-hover-zone {
-  display: none;
-}
-
+/* Floating Edge MENU Dock (Removed per user request across all devices) */
+.edge3d-hover-zone,
 .edge3d-dock-btn {
-  display: none;
+  display: none !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
 }
 
 .edge3d-hover-zone::after {
@@ -1544,6 +1544,17 @@ body.edge3d-panel-open .edge3d-dock-btn {
   filter: invert(1);
 }
 
+/* Center lone last card in Home 1 programs grid on tablet (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #homeProgramsPreviewGrid {
+    justify-content: center !important;
+  }
+  #homeProgramsPreviewGrid > :last-child {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
 /* Auth Split Screen (Login & Register) */
 .auth-split-wrapper {
   min-height: 100vh;
@@ -1555,8 +1566,28 @@ body.edge3d-panel-open .edge3d-dock-btn {
   .auth-split-wrapper {
     grid-template-columns: 1fr;
   }
+}
+
+/* Mobile Login Page Layout Fix (<= 768px) */
+@media (max-width: 768px) {
   .auth-visual-panel {
-    min-height: 280px;
+    display: none !important;
+  }
+  .auth-form-panel {
+    padding: 24px 14px !important;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .auth-card {
+    padding: 22px 18px !important;
+    max-width: 100% !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
+  }
+  .auth-card h2 {
+    font-size: 1.65rem !important;
   }
 }
 

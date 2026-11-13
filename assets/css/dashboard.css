@@ -37,6 +37,49 @@
   border-bottom: 1px solid var(--border-color);
 }
 
+/* Dedicated Player / Admin Card inside Sidebar Menu */
+.dash-sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  margin: 12px 14px 4px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dash-sidebar-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid var(--accent-orange);
+  flex-shrink: 0;
+}
+
+.dash-sidebar-meta {
+  min-width: 0;
+  line-height: 1.25;
+}
+
+.dash-sidebar-user-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dash-sidebar-user-id {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+}
+
 .dash-sidebar-nav {
   padding: 16px 14px;
   flex: 1 1 auto;
@@ -220,6 +263,40 @@
   flex-shrink: 0;
 }
 
+@media (max-width: 768px) {
+  .dash-topbar {
+    height: 60px;
+    padding: 0 12px;
+    gap: 8px;
+  }
+  .dash-main {
+    padding-top: 60px;
+  }
+  .dash-topbar-left {
+    gap: 8px;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .dash-topbar-left h1 {
+    font-size: 1.15rem !important;
+  }
+  .dash-topbar-left .demo-badge {
+    display: none !important;
+  }
+  .dash-topbar-right {
+    gap: 6px;
+  }
+  .dash-topbar-btn-label {
+    display: none !important;
+  }
+  .dash-topbar-right .icon-toggle-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+  }
+}
+
 .dash-player-pill {
   display: inline-flex;
   align-items: center;
@@ -392,15 +469,15 @@
   aspect-ratio: 1 / 1;
   min-height: 44px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 0.88rem;
-  font-weight: 700;
-  background: var(--bg-card);
-  color: var(--text-primary) !important;
+  font-size: 0.95rem;
+  font-weight: 800;
+  background: #1C232B;
+  color: #FFFFFF !important;
   cursor: pointer;
   transition: transform var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
 }
@@ -411,30 +488,36 @@
 }
 
 /* Explicit high-contrast calendar colors in Dark & Light themes */
-[data-theme="dark"] .cal-day-cell {
+[data-theme="dark"] .cal-day-cell,
+html[data-theme="dark"] .cal-day-cell,
+body[data-theme="dark"] .cal-day-cell,
+.dash-content[data-theme="dark"] .cal-day-cell {
   color: #FFFFFF !important;
-  background: #181D24;
+  background: #1C232B !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  font-weight: 800 !important;
 }
 
 [data-theme="dark"] .cal-day-cell:hover:not(.cal-empty) {
-  border-color: var(--accent-yellow);
+  border-color: var(--accent-orange) !important;
   color: #FFFFFF !important;
+  background: #27313D !important;
 }
 
 [data-theme="dark"] .cal-present {
-  background: rgba(34, 197, 94, 0.22) !important;
+  background: rgba(34, 197, 94, 0.3) !important;
   border-color: #22C55E !important;
   color: #4ADE80 !important;
 }
 
 [data-theme="dark"] .cal-absent {
-  background: rgba(239, 68, 68, 0.22) !important;
+  background: rgba(239, 68, 68, 0.3) !important;
   border-color: #EF4444 !important;
   color: #F87171 !important;
 }
 
 [data-theme="dark"] .cal-upcoming {
-  background: rgba(255, 212, 59, 0.22) !important;
+  background: rgba(255, 212, 59, 0.3) !important;
   border-color: #FFD43B !important;
   color: #FDE047 !important;
 }
