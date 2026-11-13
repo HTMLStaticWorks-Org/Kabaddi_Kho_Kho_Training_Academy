@@ -1574,6 +1574,21 @@ body.edge3d-panel-open .edge3d-dock-btn {
   transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.2s ease;
 }
 
+@media (max-width: 768px) {
+  .back-to-top-btn {
+    bottom: 20px;
+    inset-inline-end: 20px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Auth pages do not display floating back-to-top button */
+body:has(#playerLoginForm) .back-to-top-btn,
+body:has(#playerRegisterForm) .back-to-top-btn {
+  display: none !important;
+}
+
 .back-to-top-btn.is-visible {
   opacity: 1;
   visibility: visible;

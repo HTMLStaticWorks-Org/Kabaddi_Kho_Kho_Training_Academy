@@ -425,6 +425,14 @@
   }
 
   function initBackToTop() {
+    // Dedicated authentication pages (login & register) are single focused cards without footers;
+    // do not show the floating back-to-top button there as it obstructs form actions and links.
+    if (document.getElementById('playerLoginForm') || document.getElementById('playerRegisterForm')) {
+      const existing = document.getElementById('backToTopBtn');
+      if (existing) existing.remove();
+      return;
+    }
+
     let btn = document.getElementById('backToTopBtn');
     if (!btn) {
       btn = document.createElement('button');
