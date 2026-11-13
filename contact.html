@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us &amp; Arena Location | Raiders Sports Academy</title>
+  <meta name="description" content="Get in touch with Raiders Sports Academy in Pune. Inquire about Kabaddi and Kho-Kho training batches, visit our cushioned mat arena, or review academy FAQs.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Cairo:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <!-- Sticky Public Navigation -->
+  <header class="academy-navbar">
+    <div class="academy-container navbar-inner">
+      <a href="index.html" class="brand-logo" aria-label="Raiders Sports Academy Home">
+        <img src="assets/images/logo.svg" alt="Raiders Sports Academy Logo">
+        <span class="brand-wordmark">
+          <span class="brand-title">Raiders</span>
+          <span class="brand-sub">Sports Academy</span>
+        </span>
+      </a>
+
+      <ul class="navbar-desktop-nav">
+        <li class="nav-dropdown">
+          <a href="index.html" class="nav-link-item" data-nav-page="index.html">
+            <span data-i18n-nav="home">Home</span>
+            <i data-lucide="chevron-down" style="width:15px;height:15px;"></i>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html" class="nav-dropdown-link">
+              <span data-i18n-nav="home1">Home 1: Kabaddi</span>
+              <i data-lucide="arrow-up-right" style="width:14px;height:14px;"></i>
+            </a>
+            <a href="home-kho-kho.html" class="nav-dropdown-link">
+              <span data-i18n-nav="home2">Home 2: Kho-Kho</span>
+              <i data-lucide="arrow-up-right" style="width:14px;height:14px;"></i>
+            </a>
+          </div>
+        </li>
+        <li><a href="programs.html" class="nav-link-item" data-nav-page="programs.html" data-i18n-nav="programs">Programs</a></li>
+        <li><a href="coaches.html" class="nav-link-item" data-nav-page="coaches.html" data-i18n-nav="coaches">Coaches</a></li>
+        <li><a href="about.html" class="nav-link-item" data-nav-page="about.html" data-i18n-nav="about">About Academy</a></li>
+        <li><a href="contact.html" class="nav-link-item active" data-nav-page="contact.html" data-i18n-nav="contact">Contact</a></li>
+        <li><a href="dashboard.html" class="nav-link-item" data-nav-page="dashboard.html" data-i18n-nav="dashboard">Dashboard</a></li>
+      </ul>
+
+      <div class="navbar-desktop-actions">
+        <button type="button" class="icon-toggle-btn" data-theme-toggle>
+          <i data-theme-icon data-lucide="sun" style="width:16px;height:16px;"></i>
+          <span data-theme-label>Light</span>
+        </button>
+        <button type="button" class="icon-toggle-btn" data-dir-toggle>
+          <i data-lucide="languages" style="width:16px;height:16px;"></i>
+          <span data-dir-label>RTL</span>
+        </button>
+        <a href="dashboard.html" class="btn-academy-yellow btn-sm-compact d-none" data-auth-player data-i18n-nav="dashboard">Player Dashboard</a>
+        <a href="register.html" class="btn-academy-primary btn-sm-compact" data-auth-guest data-i18n-nav="join">Join Academy</a>
+      </div>
+
+      <!-- Visible ONLY <=1024px -->
+      <button type="button" id="mobileMenuOpenBtn" class="navbar-mobile-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+        <i data-lucide="menu" style="width:22px;height:22px;"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobileNavBackdrop" class="mobile-nav-backdrop"></div>
+  <aside id="mobileNavDrawer" class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logo.svg" alt="Raiders Logo">
+        <span class="brand-wordmark">
+          <span class="brand-title">Raiders</span>
+          <span class="brand-sub">Sports Academy</span>
+        </span>
+      </a>
+      <button type="button" id="mobileMenuCloseBtn" class="icon-toggle-btn" aria-label="Close Menu">
+        <i data-lucide="x" style="width:18px;height:18px;"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-drawer-links">
+      <a href="index.html" class="mobile-drawer-link"><span data-i18n-nav="home1">Home 1: Kabaddi</span><i data-lucide="shield" style="width:16px;height:16px;"></i></a>
+      <a href="home-kho-kho.html" class="mobile-drawer-link"><span data-i18n-nav="home2">Home 2: Kho-Kho</span><i data-lucide="zap" style="width:16px;height:16px;"></i></a>
+      <a href="programs.html" class="mobile-drawer-link"><span data-i18n-nav="programs">Programs</span><i data-lucide="dumbbell" style="width:16px;height:16px;"></i></a>
+      <a href="coaches.html" class="mobile-drawer-link"><span data-i18n-nav="coaches">Coaches</span><i data-lucide="users" style="width:16px;height:16px;"></i></a>
+      <a href="about.html" class="mobile-drawer-link"><span data-i18n-nav="about">About Academy</span><i data-lucide="info" style="width:16px;height:16px;"></i></a>
+      <a href="contact.html" class="mobile-drawer-link active"><span data-i18n-nav="contact">Contact</span><i data-lucide="phone" style="width:16px;height:16px;"></i></a>
+      <a href="dashboard.html" class="mobile-drawer-link"><span data-i18n-nav="dashboard">Dashboard</span><i data-lucide="layout-dashboard" style="width:16px;height:16px;"></i></a>
+    </nav>
+
+    <div class="mobile-drawer-controls">
+      <a href="register.html" class="btn-academy-primary w-100" data-auth-guest data-i18n-nav="join">Join Academy</a>
+      <a href="dashboard.html" class="btn-academy-yellow w-100 d-none" data-auth-player data-i18n-nav="dashboard">Open Dashboard</a>
+      <div class="mobile-toggles-row">
+        <button type="button" class="icon-toggle-btn w-100" data-theme-toggle>
+          <i data-theme-icon data-lucide="sun" style="width:16px;height:16px;"></i>
+          <span data-theme-label>Light</span>
+        </button>
+        <button type="button" class="icon-toggle-btn w-100" data-dir-toggle>
+          <i data-lucide="languages" style="width:16px;height:16px;"></i>
+          <span data-dir-label>RTL</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- HERO SECTION: CONTACT -->
+    <section class="academy-hero" style="min-height:50vh;padding-top:140px;padding-bottom:50px;">
+      <div class="hero-bg-media">
+        <img src="assets/images/kabaddi-coach-mat.jpg" alt="Raiders Arena Reception &amp; Mat" class="hero-bg-img" style="filter:brightness(0.3);">
+        <div class="hero-stadium-overlay"></div>
+      </div>
+
+      <div class="academy-container position-relative z-2">
+        <div class="max-w-720" data-aos="fade-up">
+          <span class="hero-badge-tag mb-3">
+            <i data-lucide="phone-call" style="width:14px;height:14px;"></i>
+            Admissions &amp; Arena Inquiries
+          </span>
+          <h1 class="hero-display-title mb-3" style="font-size:clamp(2.5rem,5.2vw,4.2rem);">
+            Visit Our Arena. Connect With Our Mentors.
+          </h1>
+          <p class="hero-desc mb-0" style="font-size:1.15rem;line-height:1.7;">
+            Have questions regarding age eligibility, trial evaluations, morning or evening batch schedules, or fee structures? Our team is available 6 days a week to support athletes and parents.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: CONTACT CHANNELS CARDS -->
+    <section class="academy-section">
+      <div class="academy-container">
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-3" data-aos="fade-up">
+            <div class="academy-card p-4 h-100">
+              <div class="pillar-icon-box mb-3" style="background:rgba(255,87,34,0.15);color:var(--accent-orange);">
+                <i data-lucide="map-pin" style="width:22px;height:22px;"></i>
+              </div>
+              <h4 class="card-title-std mb-2" style="font-size:1.25rem;">Campus Location</h4>
+              <p class="card-desc-std mb-2">
+                Plot 14, Balewadi Sports Corridor, Pune, Maharashtra 411045, India
+              </p>
+              <small class="text-orange fw-semibold">Next to Balewadi High Performance Centre</small>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="70">
+            <div class="academy-card p-4 h-100">
+              <div class="pillar-icon-box mb-3" style="background:rgba(255,212,59,0.15);color:var(--accent-yellow);">
+                <i data-lucide="phone" style="width:22px;height:22px;"></i>
+              </div>
+              <h4 class="card-title-std mb-2" style="font-size:1.25rem;">Phone &amp; WhatsApp</h4>
+              <p class="card-desc-std mb-1">
+                <strong>Hotline:</strong> +91 20 4852 9900 (Demo)
+              </p>
+              <p class="card-desc-std mb-2">
+                <strong>WhatsApp:</strong> +91 98230 11223 (Demo)
+              </p>
+              <small class="text-yellow fw-semibold">Available 07:00 AM - 08:00 PM</small>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="140">
+            <div class="academy-card p-4 h-100">
+              <div class="pillar-icon-box mb-3" style="background:rgba(34,197,94,0.15);color:var(--success);">
+                <i data-lucide="mail" style="width:22px;height:22px;"></i>
+              </div>
+              <h4 class="card-title-std mb-2" style="font-size:1.25rem;">Email Inquiries</h4>
+              <p class="card-desc-std mb-1">
+                <strong>Admissions:</strong> admissions@raidersacademy.in
+              </p>
+              <p class="card-desc-std mb-2">
+                <strong>General:</strong> info@raidersacademy.in
+              </p>
+              <small class="text-success fw-semibold">24-hour response turnaround</small>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="210">
+            <div class="academy-card p-4 h-100">
+              <div class="pillar-icon-box mb-3" style="background:rgba(255,87,34,0.15);color:var(--accent-orange);">
+                <i data-lucide="clock" style="width:22px;height:22px;"></i>
+              </div>
+              <h4 class="card-title-std mb-2" style="font-size:1.25rem;">Training Hours</h4>
+              <p class="card-desc-std mb-1">
+                <strong>Morning Batch:</strong> 05:45 AM - 09:00 AM
+              </p>
+              <p class="card-desc-std mb-2">
+                <strong>Evening Batch:</strong> 04:00 PM - 08:30 PM
+              </p>
+              <small class="text-orange fw-semibold">Open Monday through Saturday</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTERACTIVE FORM & GOOGLE MAP EMBED -->
+    <section class="academy-section academy-section-alt">
+      <div class="academy-container">
+        <div class="section-header-center" data-aos="fade-up">
+          <span class="section-eyebrow">
+            <i data-lucide="send" style="width:15px;height:15px;"></i>
+            Direct Inquiry
+          </span>
+          <h2 class="section-title">Send a Training Inquiry or Locate Our Arena</h2>
+          <p class="section-subtitle">
+            Submit your details below to schedule a free trial evaluation, or find driving directions to our Balewadi sports complex.
+          </p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <!-- Left: AJAX Inquiry Form -->
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="academy-card p-4 p-md-5 h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                <h3 class="card-title-std mb-0" style="font-size:1.45rem;">Training Admissions Form</h3>
+                <span class="demo-badge">Demo AJAX Submission</span>
+              </div>
+              <p class="text-secondary-custom mb-4" style="font-size:0.9rem;">
+                Fill out the athlete inquiry below. In demo mode, your inquiry will be logged locally and confirmed via toast.
+              </p>
+
+              <form class="js-ajax-contact-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="academy-label" for="cntName">Athlete / Parent Name *</label>
+                    <input type="text" id="cntName" name="contactName" class="academy-input" placeholder="e.g., Vikram Shinde" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="academy-label" for="cntEmail">Email Address *</label>
+                    <input type="email" id="cntEmail" name="contactEmail" class="academy-input" placeholder="vikram@example.com" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="academy-label" for="cntPhone">Phone Number</label>
+                    <input type="tel" id="cntPhone" name="contactPhone" class="academy-input" placeholder="+91 98XXXXXXXX">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="academy-label" for="cntSport">Sport Pathway *</label>
+                    <select id="cntSport" name="contactSport" class="academy-select">
+                      <option value="Kabaddi">Kabaddi Training (Beginner / Advanced)</option>
+                      <option value="Kho-Kho">Kho-Kho Training (Speed / Tactical)</option>
+                      <option value="Both Sports">Dual Sport Conditioning (Kabaddi + Kho-Kho)</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="academy-label" for="cntMessage">Inquiry / Age Group / Batch Preference *</label>
+                    <textarea id="cntMessage" name="contactMessage" rows="4" class="academy-textarea" placeholder="Provide athlete's age, playing experience (if any), and whether you prefer Morning or Evening batches..." required></textarea>
+                  </div>
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn-academy-primary w-100">
+                      <i data-lucide="send" style="width:16px;height:16px;"></i>
+                      Submit Training Inquiry
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Google Map Embed -->
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="academy-card p-4 h-100 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="card-title-std mb-0" style="font-size:1.45rem;">Raiders Arena Map</h3>
+                <span class="demo-badge">Balewadi, Pune</span>
+              </div>
+              <p class="text-secondary-custom mb-3" style="font-size:0.9rem;">
+                Conveniently located off the Pune-Bengaluru Highway in the Balewadi Sports Corridor with dedicated athlete parking and bus connectivity.
+              </p>
+
+              <div class="map-embed-wrapper flex-grow-1">
+                <iframe
+                  title="Raiders Sports Academy Balewadi Pune Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.539828464357!2d73.7663273!3d18.5721753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b95b8d5a2d0f%3A0x6b7724a73752697!2sShree%20Shiv%20Chhatrapati%20Sports%20Complex%2C%20Balewadi!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top border-secondary border-opacity-25 flex-wrap gap-2">
+                <span class="text-secondary-custom" style="font-size:0.85rem;">Landmark: Near Shiv Chhatrapati Sports City</span>
+                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn-academy-secondary btn-sm-compact">
+                  <i data-lucide="navigation" style="width:14px;height:14px;"></i>
+                  Open in Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: FAQ ACCORDION -->
+    <section class="academy-section">
+      <div class="academy-container" style="max-width:920px;">
+        <div class="section-header-center" data-aos="fade-up">
+          <span class="section-eyebrow">
+            <i data-lucide="help-circle" style="width:15px;height:15px;"></i>
+            Frequently Asked Questions
+          </span>
+          <h2 class="section-title">Got Questions? We Have Answers.</h2>
+          <p class="section-subtitle">
+            Essential guidelines for prospective athletes, parents, and school team coordinators.
+          </p>
+        </div>
+
+        <div class="accordion academy-accordion" id="academyFaqAccordion" data-aos="fade-up">
+          <!-- FAQ 1 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faqHead1">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol1" aria-expanded="true" aria-controls="faqCol1">
+                1. What age groups are eligible to train at Raiders Sports Academy?
+              </button>
+            </h3>
+            <div id="faqCol1" class="accordion-collapse collapse show" aria-labelledby="faqHead1" data-bs-parent="#academyFaqAccordion">
+              <div class="accordion-body">
+                We accept athletes starting from age 8 up to senior/open amateur divisions. Training groups are strictly divided by age and biological maturity: Sub-Junior (ages 8–12), Junior (ages 13–16), Youth (ages 17–19), and Senior Competitive squads. This ensures age-appropriate physical conditioning and safe contact intensity.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faqHead2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol2" aria-expanded="false" aria-controls="faqCol2">
+                2. Can complete beginners enroll, or is prior tournament experience required?
+              </button>
+            </h3>
+            <div id="faqCol2" class="accordion-collapse collapse" aria-labelledby="faqHead2" data-bs-parent="#academyFaqAccordion">
+              <div class="accordion-body">
+                Complete beginners are warmly welcomed! Our Beginner Kabaddi and Beginner Kho-Kho programs teach fundamental footwork, body balance, diving technique, cant (breath control), and rules from ground zero. No prior competitive experience is necessary.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faqHead3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol3" aria-expanded="false" aria-controls="faqCol3">
+                3. What equipment or sports gear does a new player need to bring?
+              </button>
+            </h3>
+            <div id="faqCol3" class="accordion-collapse collapse" aria-labelledby="faqHead3" data-bs-parent="#academyFaqAccordion">
+              <div class="accordion-body">
+                Players should arrive in breathable athletic shorts and an academy or moisture-wicking jersey. For Kabaddi, training on our cushioned mats is barefoot or in approved mat shoes, with knee and elbow compression sleeves recommended. For Kho-Kho, lightweight gum-sole agility shoes or barefoot sprint grip are standard. We supply all mats, sprint cords, hurdles, and medical ice baths.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faqHead4">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol4" aria-expanded="false" aria-controls="faqCol4">
+                4. Are morning and evening batch schedules flexible for school or college students?
+              </button>
+            </h3>
+            <div id="faqCol4" class="accordion-collapse collapse" aria-labelledby="faqHead4" data-bs-parent="#academyFaqAccordion">
+              <div class="accordion-body">
+                Yes. We offer morning batches (06:00 AM - 07:30 AM), evening batches (05:30 PM - 07:30 PM), and dedicated weekend conditioning sessions. Students can request batch timing adjustments through the Player Dashboard if their academic exam timetables require temporary changes.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faqHead5">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol5" aria-expanded="false" aria-controls="faqCol5">
+                5. What safety and sports medicine protocols are maintained during sessions?
+              </button>
+            </h3>
+            <div id="faqCol5" class="accordion-collapse collapse" aria-labelledby="faqHead5" data-bs-parent="#academyFaqAccordion">
+              <div class="accordion-body">
+                Athlete safety is our primary metric. All contact scrimmages take place on 40mm Olympic-grade shock-absorbent mats. Our facility employs a certified sports physiotherapist during active batch hours, maintains cryotherapy ice tubs for post-drill recovery, and adheres to strict concussion and joint sprain return-to-play protocols.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faqHead6">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol6" aria-expanded="false" aria-controls="faqCol6">
+                6. How can parents track their child's training attendance and tournament readiness?
+              </button>
+            </h3>
+            <div id="faqCol6" class="accordion-collapse collapse" aria-labelledby="faqHead6" data-bs-parent="#academyFaqAccordion">
+              <div class="accordion-body">
+                Every registered athlete receives access to the dedicated online Player Dashboard. Parents can monitor session-by-session calendar attendance logs, coach evaluation remarks, tournament registration rosters, and fee payment receipts 24/7 on any device.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SOCIAL MEDIA CONNECT -->
+    <section class="academy-section academy-section-alt">
+      <div class="academy-container">
+        <div class="section-header-center" data-aos="fade-up">
+          <span class="section-eyebrow">
+            <i data-lucide="share-2" style="width:15px;height:15px;"></i>
+            Community &amp; Highlights
+          </span>
+          <h2 class="section-title">Connect With Us On Social Media</h2>
+          <p class="section-subtitle">
+            Follow live tournament raids, training drill breakdowns, coach Q&amp;As, and student achievements across our social channels.
+          </p>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-sm-6 col-lg-4" data-aos="zoom-in">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-channel-card">
+              <div class="social-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </div>
+              <div class="flex-grow-1 min-w-0">
+                <div class="fw-bold fs-6">Instagram</div>
+                <small class="text-secondary-custom">@raiderssportsacademy • 48K Fans</small>
+              </div>
+              <i data-lucide="arrow-up-right" style="width:18px;height:18px;"></i>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="60">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-channel-card">
+              <div class="social-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"></polygon></svg>
+              </div>
+              <div class="flex-grow-1 min-w-0">
+                <div class="fw-bold fs-6">YouTube</div>
+                <small class="text-secondary-custom">Raiders Masterclass • 62K Subs</small>
+              </div>
+              <i data-lucide="arrow-up-right" style="width:18px;height:18px;"></i>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="120">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-channel-card">
+              <div class="social-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              </div>
+              <div class="flex-grow-1 min-w-0">
+                <div class="fw-bold fs-6">Facebook</div>
+                <small class="text-secondary-custom">Raiders Sports Academy Official</small>
+              </div>
+              <i data-lucide="arrow-up-right" style="width:18px;height:18px;"></i>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-6" data-aos="zoom-in" data-aos-delay="180">
+            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" class="social-channel-card">
+              <div class="social-icon-box" style="color:var(--success);">
+                <i data-lucide="message-circle" style="width:22px;height:22px;"></i>
+              </div>
+              <div class="flex-grow-1 min-w-0">
+                <div class="fw-bold fs-6">WhatsApp Admissions Chat</div>
+                <small class="text-secondary-custom">Instant replies from admissions coordinators</small>
+              </div>
+              <i data-lucide="arrow-up-right" style="width:18px;height:18px;"></i>
+            </a>
+          </div>
+
+          <div class="col-sm-12 col-lg-6" data-aos="zoom-in" data-aos-delay="240">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-channel-card">
+              <div class="social-icon-box">
+                <i data-lucide="twitter" style="width:22px;height:22px;"></i>
+              </div>
+              <div class="flex-grow-1 min-w-0">
+                <div class="fw-bold fs-6">Twitter / X</div>
+                <small class="text-secondary-custom">@RaidersAcademyIN • Match updates &amp; scores</small>
+              </div>
+              <i data-lucide="arrow-up-right" style="width:18px;height:18px;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: FINAL CTA BANNER (ABOVE FOOTER) -->
+    <section class="academy-section py-5">
+      <div class="academy-container">
+        <div class="cta-championship-banner" data-aos="fade-up">
+          <span class="demo-badge mb-3">Admissions &amp; Trials Open (Demo)</span>
+          <h2 class="hero-display-title mb-3" style="font-size:clamp(2.2rem,4.8vw,3.8rem);">
+            Step Onto The Mat With Us.
+          </h2>
+          <p class="text-secondary-custom mx-auto mb-4" style="max-width:620px;color:#D1D5DB !important;">
+            Experience professional coaching on cushioned mats or speed courts. Book an evaluation session or enroll in age-tailored batches.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="register.html" class="btn-academy-primary">Enroll Now</a>
+            <a href="programs.html" class="btn-academy-yellow">Explore Programs</a>
+            <a href="dashboard.html" class="btn-academy-secondary">Player Dashboard</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Universal 4-Column Footer -->
+  <footer class="academy-footer">
+    <div class="academy-container">
+      <div class="row g-4 pb-4 border-bottom border-secondary border-opacity-25">
+        <div class="col-lg-4">
+          <a href="index.html" class="brand-logo mb-3">
+            <img src="assets/images/logo.svg" alt="Raiders Logo">
+            <span class="brand-wordmark">
+              <span class="brand-title text-white">Raiders</span>
+              <span class="brand-sub">Sports Academy</span>
+            </span>
+          </a>
+          <p class="text-secondary-custom" style="font-size:0.9rem;">
+            Train Hard. Play Fearless. Become a Champion. India's premier Kabaddi &amp; Kho-Kho training academy building grassroots talent into national podium finishers.
+          </p>
+          <div class="d-flex gap-2 mt-3">
+            <a href="contact.html" class="social-pill" aria-label="Instagram" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="contact.html" class="social-pill" aria-label="YouTube" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"></polygon>
+              </svg>
+            </a>
+            <a href="contact.html" class="social-pill" aria-label="Facebook" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1: Kabaddi</a></li>
+            <li><a href="home-kho-kho.html">Home 2: Kho-Kho</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="about.html">About Academy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <h5 class="footer-heading">Training Programs</h5>
+          <ul class="footer-links">
+            <li><a href="programs.html?sport=Kabaddi">Kabaddi Training</a></li>
+            <li><a href="programs.html?sport=Kho-Kho">Kho-Kho Training</a></li>
+            <li><a href="programs.html">Fitness &amp; Conditioning</a></li>
+            <li><a href="dashboard.html">Player Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h5 class="footer-heading">Contact Details</h5>
+          <ul class="footer-links footer-contact-list">
+            <li class="d-flex align-items-start gap-2">
+              <i data-lucide="map-pin" style="width:18px;height:18px;color:var(--accent-orange);flex-shrink:0;margin-top:2px;"></i>
+              <span>Plot 14, Balewadi Sports Corridor, Pune, India</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i data-lucide="phone" style="width:18px;height:18px;color:var(--accent-orange);flex-shrink:0;"></i>
+              <span>+91 20 4852 9900 (Demo)</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i data-lucide="mail" style="width:18px;height:18px;color:var(--accent-orange);flex-shrink:0;"></i>
+              <span>admissions@raidersacademy.in</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-4 d-flex flex-wrap justify-content-between align-items-center gap-2" style="font-size:0.84rem;color:#9CA3AF;">
+        <span>&copy; 2027 Raiders Sports Academy. Demo presentation.</span>
+        <span>Admissions Office &amp; Balewadi Campus</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.475.0/dist/umd/lucide.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

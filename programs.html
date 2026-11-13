@@ -39,9 +39,9 @@
         </li>
         <li><a href="programs.html" class="nav-link-item active" data-nav-page="programs.html" data-i18n-nav="programs">Programs</a></li>
         <li><a href="coaches.html" class="nav-link-item" data-nav-page="coaches.html" data-i18n-nav="coaches">Coaches</a></li>
+        <li><a href="about.html" class="nav-link-item" data-nav-page="about.html" data-i18n-nav="about">About Academy</a></li>
+        <li><a href="contact.html" class="nav-link-item" data-nav-page="contact.html" data-i18n-nav="contact">Contact</a></li>
         <li><a href="dashboard.html" class="nav-link-item" data-nav-page="dashboard.html" data-i18n-nav="dashboard">Dashboard</a></li>
-        <li><a href="index.html#about-academy" class="nav-link-item" data-i18n-nav="about">About Academy</a></li>
-        <li><a href="index.html#contact-academy" class="nav-link-item" data-i18n-nav="contact">Contact</a></li>
       </ul>
 
       <div class="navbar-desktop-actions">
@@ -53,7 +53,6 @@
           <i data-lucide="languages" style="width:16px;height:16px;"></i>
           <span data-dir-label>RTL</span>
         </button>
-        <a href="login.html" class="nav-link-item" data-auth-guest data-i18n-nav="login">Login</a>
         <a href="dashboard.html" class="btn-academy-yellow btn-sm-compact d-none" data-auth-player data-i18n-nav="dashboard">Player Dashboard</a>
         <a href="register.html" class="btn-academy-primary btn-sm-compact" data-auth-guest data-i18n-nav="join">Join Academy</a>
       </div>
@@ -83,9 +82,8 @@
       <a href="home-kho-kho.html" class="mobile-drawer-link"><span data-i18n-nav="home2">Home 2: Kho-Kho</span><i data-lucide="zap" style="width:16px;height:16px;"></i></a>
       <a href="programs.html" class="mobile-drawer-link active"><span data-i18n-nav="programs">Programs</span><i data-lucide="dumbbell" style="width:16px;height:16px;"></i></a>
       <a href="coaches.html" class="mobile-drawer-link"><span data-i18n-nav="coaches">Coaches</span><i data-lucide="users" style="width:16px;height:16px;"></i></a>
-      <a href="index.html#about-academy" class="mobile-drawer-link"><span data-i18n-nav="about">About Academy</span><i data-lucide="info" style="width:16px;height:16px;"></i></a>
-      <a href="index.html#contact-academy" class="mobile-drawer-link"><span data-i18n-nav="contact">Contact</span><i data-lucide="phone" style="width:16px;height:16px;"></i></a>
-      <a href="login.html" class="mobile-drawer-link" data-auth-guest><span data-i18n-nav="login">Login</span><i data-lucide="log-in" style="width:16px;height:16px;"></i></a>
+      <a href="about.html" class="mobile-drawer-link"><span data-i18n-nav="about">About Academy</span><i data-lucide="info" style="width:16px;height:16px;"></i></a>
+      <a href="contact.html" class="mobile-drawer-link"><span data-i18n-nav="contact">Contact</span><i data-lucide="phone" style="width:16px;height:16px;"></i></a>
       <a href="dashboard.html" class="mobile-drawer-link"><span data-i18n-nav="dashboard">Dashboard</span><i data-lucide="layout-dashboard" style="width:16px;height:16px;"></i></a>
     </nav>
     <div class="mobile-drawer-controls">
@@ -279,42 +277,84 @@
 
   <footer class="academy-footer">
     <div class="academy-container">
-      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
-        <a href="index.html" class="brand-logo">
-          <img src="assets/images/logo.svg" alt="Raiders Logo">
-          <span class="brand-wordmark">
-            <span class="brand-title text-white">Raiders</span>
-            <span class="brand-sub">Sports Academy</span>
-          </span>
-        </a>
-        <div class="d-flex flex-wrap gap-3" style="font-size:0.9rem;">
-          <a href="index.html">Home 1</a>
-          <a href="home-kho-kho.html">Home 2</a>
-          <a href="programs.html">Programs</a>
-          <a href="coaches.html">Coaches</a>
-          <a href="dashboard.html">Dashboard</a>
+      <div class="row g-4 pb-4 border-bottom border-secondary border-opacity-25">
+        <div class="col-lg-4">
+          <a href="index.html" class="brand-logo mb-3">
+            <img src="assets/images/logo.svg" alt="Raiders Logo">
+            <span class="brand-wordmark">
+              <span class="brand-title text-white">Raiders</span>
+              <span class="brand-sub">Sports Academy</span>
+            </span>
+          </a>
+          <p class="text-secondary-custom" style="font-size:0.9rem;">
+            Train Hard. Play Fearless. Become a Champion. India's premier Kabaddi &amp; Kho-Kho training pathways from grassroots development to competitive championships.
+          </p>
+          <div class="d-flex gap-2 mt-3">
+            <a href="contact.html" class="social-pill" aria-label="Instagram" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="contact.html" class="social-pill" aria-label="YouTube" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"></polygon>
+              </svg>
+            </a>
+            <a href="contact.html" class="social-pill" aria-label="Facebook" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+          </div>
         </div>
-        <div class="d-flex align-items-center gap-2">
-          <a href="index.html#contact-academy" class="social-pill" aria-label="Instagram" title="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          </a>
-          <a href="index.html#contact-academy" class="social-pill" aria-label="YouTube" title="YouTube">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
-              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"></polygon>
-            </svg>
-          </a>
-          <a href="index.html#contact-academy" class="social-pill" aria-label="Facebook" title="Facebook">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-            </svg>
-          </a>
+
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1: Kabaddi</a></li>
+            <li><a href="home-kho-kho.html">Home 2: Kho-Kho</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="about.html">About Academy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
         </div>
-        <span style="font-size:0.84rem;color:#9CA3AF;">&copy; 2027 Raiders Sports Academy • Demo Mode</span>
+
+        <div class="col-6 col-lg-3">
+          <h5 class="footer-heading">Training Programs</h5>
+          <ul class="footer-links">
+            <li><a href="programs.html?sport=Kabaddi">Kabaddi Training</a></li>
+            <li><a href="programs.html?sport=Kho-Kho">Kho-Kho Training</a></li>
+            <li><a href="programs.html">Fitness &amp; Conditioning</a></li>
+            <li><a href="programs.html">Tournament Preparation</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h5 class="footer-heading">Contact Details</h5>
+          <ul class="footer-links footer-contact-list">
+            <li class="d-flex align-items-start gap-2">
+              <i data-lucide="map-pin" style="width:18px;height:18px;color:var(--accent-orange);flex-shrink:0;margin-top:2px;"></i>
+              <span>Plot 14, Balewadi Sports Corridor, Pune, India</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i data-lucide="phone" style="width:18px;height:18px;color:var(--accent-orange);flex-shrink:0;"></i>
+              <span>+91 20 4852 9900 (Demo)</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i data-lucide="mail" style="width:18px;height:18px;color:var(--accent-orange);flex-shrink:0;"></i>
+              <span>admissions@raidersacademy.in</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-4 d-flex flex-wrap justify-content-between align-items-center gap-2" style="font-size:0.84rem;color:#9CA3AF;">
+        <span>&copy; 2027 Raiders Sports Academy. Demo data presentation.</span>
+        <span>Training Pathways • Excellence in Indian Sports</span>
       </div>
     </div>
   </footer>

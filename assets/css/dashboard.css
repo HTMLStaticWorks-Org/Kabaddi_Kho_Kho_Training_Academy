@@ -95,6 +95,30 @@
   border-top: 1px solid var(--border-color);
 }
 
+.dash-logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.32);
+  color: #EF4444;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dash-logout-btn:hover {
+  background: #EF4444;
+  color: #FFFFFF;
+  border-color: #EF4444;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.32);
+}
+
 /* Mobile Sidebar Drawer (<=1024px) */
 .dash-backdrop {
   position: fixed;
@@ -373,43 +397,75 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  background: var(--bg-primary);
+  background: var(--bg-card);
+  color: var(--text-primary) !important;
   cursor: pointer;
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .cal-day-cell:hover:not(.cal-empty) {
-  transform: scale(1.04);
+  transform: scale(1.05);
   border-color: var(--accent-orange);
 }
 
-.cal-present {
-  background: var(--success-soft);
-  border-color: rgba(34, 197, 94, 0.45);
-  color: var(--success);
+/* Explicit high-contrast calendar colors in Dark & Light themes */
+[data-theme="dark"] .cal-day-cell {
+  color: #FFFFFF !important;
+  background: #181D24;
 }
 
-.cal-absent {
-  background: var(--error-soft);
-  border-color: rgba(239, 68, 68, 0.45);
-  color: var(--error);
+[data-theme="dark"] .cal-day-cell:hover:not(.cal-empty) {
+  border-color: var(--accent-yellow);
+  color: #FFFFFF !important;
 }
 
-.cal-upcoming {
-  background: var(--accent-yellow-soft);
-  border-color: rgba(255, 212, 59, 0.45);
-  color: var(--accent-yellow);
+[data-theme="dark"] .cal-present {
+  background: rgba(34, 197, 94, 0.22) !important;
+  border-color: #22C55E !important;
+  color: #4ADE80 !important;
+}
+
+[data-theme="dark"] .cal-absent {
+  background: rgba(239, 68, 68, 0.22) !important;
+  border-color: #EF4444 !important;
+  color: #F87171 !important;
+}
+
+[data-theme="dark"] .cal-upcoming {
+  background: rgba(255, 212, 59, 0.22) !important;
+  border-color: #FFD43B !important;
+  color: #FDE047 !important;
+}
+
+[data-theme="light"] .cal-day-cell {
+  color: #111827 !important;
+  background: #FFFFFF;
+  border-color: #E5E7EB;
+}
+
+[data-theme="light"] .cal-present {
+  background: rgba(34, 197, 94, 0.16) !important;
+  border-color: #16A34A !important;
+  color: #15803D !important;
+}
+
+[data-theme="light"] .cal-absent {
+  background: rgba(239, 68, 68, 0.16) !important;
+  border-color: #DC2626 !important;
+  color: #B91C1C !important;
 }
 
 [data-theme="light"] .cal-upcoming {
-  color: #9A6700;
+  background: rgba(255, 212, 59, 0.22) !important;
+  border-color: #CA8A04 !important;
+  color: #854D0E !important;
 }
 
 .cal-empty {
-  border-color: transparent;
-  background: transparent;
+  border-color: transparent !important;
+  background: transparent !important;
   cursor: default;
 }
 

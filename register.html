@@ -15,34 +15,54 @@
   <!-- NO Public Header or Footer on Register Page -->
   <div class="academy-section" style="padding-block:36px;">
     <div class="academy-container" style="max-width:920px;">
-      <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
-        <a href="index.html" class="brand-logo" aria-label="Navigate to Home">
-          <img src="assets/images/logo.svg" alt="Raiders Sports Academy Logo">
-          <span class="brand-wordmark">
-            <span class="brand-title">Raiders</span>
-            <span class="brand-sub">Sports Academy</span>
-          </span>
-        </a>
-        <div class="d-flex align-items-center gap-2">
-          <button type="button" class="icon-toggle-btn" data-theme-toggle>
-            <i data-theme-icon data-lucide="sun" style="width:16px;height:16px;"></i>
-            <span data-theme-label>Light</span>
-          </button>
-          <button type="button" class="icon-toggle-btn" data-dir-toggle>
-            <i data-lucide="languages" style="width:16px;height:16px;"></i>
-            <span data-dir-label>RTL</span>
-          </button>
-          <a href="login.html" class="btn-academy-secondary btn-sm-compact">Back to Login</a>
-        </div>
-      </div>
-
       <div class="academy-card p-4 p-md-5">
+        <!-- Brand Wordmark Inside Card & Theme/RTL Controls at Top Right -->
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3 pb-3 border-bottom border-secondary border-opacity-25">
+          <a href="index.html" class="brand-logo" aria-label="Return to Raiders Home">
+            <img src="assets/images/logo.svg" alt="Raiders Sports Academy Logo">
+            <span class="brand-wordmark">
+              <span class="brand-title">Raiders</span>
+              <span class="brand-sub">Sports Academy</span>
+            </span>
+          </a>
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="icon-toggle-btn" data-theme-toggle aria-label="Toggle Theme">
+              <i data-theme-icon data-lucide="sun" style="width:16px;height:16px;"></i>
+              <span data-theme-label>Light</span>
+            </button>
+            <button type="button" class="icon-toggle-btn" data-dir-toggle aria-label="Toggle Direction">
+              <i data-lucide="languages" style="width:16px;height:16px;"></i>
+              <span data-dir-label>RTL</span>
+            </button>
+          </div>
+        </div>
+
         <div class="mb-4">
           <span class="demo-badge mb-2">Demo Player Registration (localStorage)</span>
           <h1 class="section-title mb-1" style="font-size:2.4rem;">Join Raiders Sports Academy</h1>
           <p class="text-secondary-custom mb-0">
             Complete the athlete profile below to create a demo player account. No real academy registration or payment is processed.
           </p>
+        </div>
+
+        <!-- Social Media Registration Options -->
+        <div class="row g-2 mb-3">
+          <div class="col-sm-6">
+            <button type="button" class="btn-social-auth w-100" data-social-auth="Google">
+              <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.7-.2-2.3H12v4.6h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.9z"/><path fill="#FBBC05" d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3 0-.8.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 12.3 0 15s.7 5.3 1.9 7.7l3.7-2.9z"/><path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2-6.4-4.8L1.9 16.4C3.7 20.1 7.5 23 12 23z"/></svg>
+              <span>Register with Google</span>
+            </button>
+          </div>
+          <div class="col-sm-6">
+            <button type="button" class="btn-social-auth w-100" data-social-auth="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Register with Facebook</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="auth-divider mb-4">
+          <span>Or Fill Athlete Profile</span>
         </div>
 
         <div id="registerSuccessBox" class="alert alert-success d-none" role="alert">
@@ -53,17 +73,18 @@
 
         <form id="playerRegisterForm" novalidate>
           <div class="row g-3">
-            <div class="col-md-6">
+            <div class="col-12">
               <label class="academy-label" for="regFullName">Player Full Name *</label>
               <input type="text" id="regFullName" class="academy-input" placeholder="e.g., Kabir Deshpande" required>
               <div class="field-error">Full name is required (min 3 characters).</div>
             </div>
-            <div class="col-md-3">
+
+            <div class="col-md-6">
               <label class="academy-label" for="regDob">Date of Birth *</label>
               <input type="date" id="regDob" class="academy-input" required>
               <div class="field-error">Please select date of birth.</div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-6">
               <label class="academy-label" for="regGender">Gender (Optional)</label>
               <select id="regGender" class="academy-select">
                 <option value="">Prefer not to say</option>
@@ -73,26 +94,27 @@
               </select>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-12">
               <label class="academy-label" for="regGuardian">Parent / Guardian Name *</label>
               <input type="text" id="regGuardian" class="academy-input" placeholder="Parent or legal guardian name" required>
               <div class="field-error">Parent / Guardian name is required.</div>
             </div>
+
             <div class="col-md-6">
               <label class="academy-label" for="regPhone">Phone Number *</label>
               <input type="tel" id="regPhone" class="academy-input" placeholder="+91 98XXXXXXXX" required>
               <div class="field-error">Enter a valid 10-15 digit phone number.</div>
             </div>
-
-            <div class="col-md-6">
-              <label class="academy-label" for="regEmail">Email Address *</label>
-              <input type="email" id="regEmail" class="academy-input" placeholder="player@example.com" required>
-              <div class="field-error">Please enter a valid email address.</div>
-            </div>
             <div class="col-md-6">
               <label class="academy-label" for="regEmergency">Emergency Contact Number *</label>
               <input type="tel" id="regEmergency" class="academy-input" placeholder="+91 98XXXXXXXX" required>
               <div class="field-error">Enter a valid emergency contact number.</div>
+            </div>
+
+            <div class="col-12">
+              <label class="academy-label" for="regEmail">Email Address *</label>
+              <input type="email" id="regEmail" class="academy-input" placeholder="player@example.com" required>
+              <div class="field-error">Please enter a valid email address.</div>
             </div>
 
             <div class="col-12">
@@ -143,12 +165,22 @@
 
             <div class="col-md-6">
               <label class="academy-label" for="regPassword">Password *</label>
-              <input type="password" id="regPassword" class="academy-input" placeholder="Minimum 6 characters" required>
+              <div class="input-group">
+                <input type="password" id="regPassword" class="academy-input" style="border-start-end-radius:0;border-end-end-radius:0;flex:1 1 auto;width:auto;" placeholder="Minimum 6 characters" required>
+                <button type="button" class="input-eye-btn" data-toggle-password="regPassword" aria-label="Toggle Password Visibility">
+                  <i data-lucide="eye" style="width:17px;height:17px;"></i>
+                </button>
+              </div>
               <div class="field-error">Password must be at least 6 characters.</div>
             </div>
             <div class="col-md-6">
               <label class="academy-label" for="regConfirmPassword">Confirm Password *</label>
-              <input type="password" id="regConfirmPassword" class="academy-input" placeholder="Re-enter password" required>
+              <div class="input-group">
+                <input type="password" id="regConfirmPassword" class="academy-input" style="border-start-end-radius:0;border-end-end-radius:0;flex:1 1 auto;width:auto;" placeholder="Re-enter password" required>
+                <button type="button" class="input-eye-btn" data-toggle-password="regConfirmPassword" aria-label="Toggle Confirm Password Visibility">
+                  <i data-lucide="eye" style="width:17px;height:17px;"></i>
+                </button>
+              </div>
               <div class="field-error">Passwords do not match.</div>
             </div>
 

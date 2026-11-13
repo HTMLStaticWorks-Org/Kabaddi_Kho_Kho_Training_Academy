@@ -248,25 +248,29 @@ window.RSA_DATA = (function () {
       quote: 'Joining Raiders Sports Academy completely transformed my raiding confidence. The mat drills and breath-control sessions helped me earn selection for my district U-19 Kabaddi squad.',
       author: 'Rohan Pawar (Demo Student)',
       meta: 'Kabaddi Advanced Batch • Age 18',
-      sport: 'Kabaddi'
+      sport: 'Kabaddi',
+      image: 'assets/images/champ-kabaddi-1.jpg'
     },
     {
       quote: 'As parents, safety and discipline matter most to us. The coaches focus equally on warm-ups, injury prevention, and respectful sportsmanship. My daughter looks forward to every Kho-Kho session.',
       author: 'Sunita Joshi (Demo Parent)',
       meta: 'Parent of Kavya Joshi (U-14 Kho-Kho)',
-      sport: 'Kho-Kho'
+      sport: 'Kho-Kho',
+      image: 'assets/images/khokho-youth.jpg'
     },
     {
       quote: 'The split-second pole-dive training and video feedback here are unmatched. Our reflexes and teamwork improved dramatically ahead of the school state nationals.',
       author: 'Siddharth Nair (Demo Student)',
       meta: 'Kho-Kho Competitive Batch • Age 19',
-      sport: 'Kho-Kho'
+      sport: 'Kho-Kho',
+      image: 'assets/images/champ-khokho-1.jpg'
     },
     {
       quote: 'Strength & conditioning sessions built my ankle stability and tackle power without risking knee strain. This academy treats Indian traditional sports with world-class professionalism.',
       author: 'Harpreet Singh (Demo Student)',
       meta: 'Kabaddi & Conditioning Batch • Age 21',
-      sport: 'Kabaddi'
+      sport: 'Kabaddi',
+      image: 'assets/images/champ-kabaddi-2.jpg'
     }
   ];
 

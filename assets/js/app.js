@@ -225,6 +225,7 @@
     }
 
     function openByHover() {
+      if (window.innerWidth >= 1025) return;
       clearTimeout(hoverCloseTimer);
       if (!pinnedOpen) {
         setDrawer(true, 'hover');
@@ -504,6 +505,60 @@
     });
   }
 
+  function initBackToTop() {
+    let btn = document.getElementById('backToTopBtn');
+    if (!btn) {
+      btn = document.createElement('button');
+      btn.type = 'button';
+      btn.id = 'backToTopBtn';
+      btn.className = 'back-to-top-btn';
+      btn.setAttribute('aria-label', 'Back to Top');
+      btn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>`;
+      document.body.appendChild(btn);
+    }
+
+    const onScroll = () => {
+      if (window.scrollY > 260) {
+        btn.classList.add('is-visible');
+      } else {
+        btn.classList.remove('is-visible');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    onScroll();
+  }
+
+  function initSocialAndEyeHandlers() {
+    // Social Sign In / Register Buttons
+    document.querySelectorAll('[data-social-auth]').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const provider = btn.getAttribute('data-social-auth') || 'Social Account';
+        showToast('Demo Social Authentication', `Connected with ${provider} (Demo Mode). No external auth request needed.`, 'info');
+      });
+    });
+
+    // Password Eye Toggles
+    document.querySelectorAll('[data-toggle-password]').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = btn.getAttribute('data-toggle-password');
+        const input = document.getElementById(targetId);
+        if (!input) return;
+        const isPassword = input.type === 'password';
+        input.type = isPassword ? 'text' : 'password';
+        const icon = btn.querySelector('[data-lucide]');
+        if (icon) {
+          icon.setAttribute('data-lucide', isPassword ? 'eye-off' : 'eye');
+          if (window.lucide) window.lucide.createIcons();
+        }
+      });
+    });
+  }
+
   function bindGlobalToggles() {
     document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
       btn.addEventListener('click', toggleTheme);
@@ -529,6 +584,8 @@
     initSwipers();
     initGSAPAndCounters();
     initAjaxContactForms();
+    initBackToTop();
+    initSocialAndEyeHandlers();
 
     if (window.lucide) {
       window.lucide.createIcons();
