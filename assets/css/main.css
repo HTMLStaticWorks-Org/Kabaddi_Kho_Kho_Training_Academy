@@ -1406,6 +1406,22 @@ body.edge3d-panel-open .edge3d-dock-btn {
   color: #FFFFFF;
   text-align: center;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-championship-banner .hero-display-title {
+  text-align: center;
+  line-height: 1.08;
+  margin-inline: auto;
+  color: #FFFFFF !important;
+}
+
+.cta-championship-banner p {
+  text-align: center;
+  margin-inline: auto;
 }
 
 /* Forms & Inputs */
@@ -1801,18 +1817,31 @@ body:has(#playerRegisterForm) .back-to-top-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   width: 100%;
-  padding: 10px 16px;
+  padding: 10px 12px;
   border-radius: var(--radius-sm);
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .btn-social-auth {
+    padding: 8px 6px;
+    gap: 5px;
+    font-size: 0.8rem;
+  }
+  .btn-social-auth svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .btn-social-auth:hover {

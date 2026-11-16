@@ -611,19 +611,21 @@
 
     document.getElementById('dashNotificationsList').innerHTML = filtered.map((n) => `
       <div class="notif-item ${n.read ? '' : 'is-unread'}">
-        <div>
-          <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
+        <div class="notif-header-row">
+          <div class="notif-meta-tags">
             <span class="demo-badge">${n.category}</span>
             <small class="text-secondary-custom">${n.time}</small>
-            ${!n.read ? '<span class="badge bg-danger">Unread</span>' : ''}
+            ${!n.read ? '<span class="badge bg-danger">Unread</span>' : '<span class="badge bg-success bg-opacity-25 text-success">Read</span>'}
           </div>
-          <div class="fw-bold mb-1">${n.title}</div>
-          <div class="text-secondary-custom" style="font-size:0.88rem;">${n.message}</div>
+          <div class="notif-action-wrap">
+            ${!n.read
+              ? `<button type="button" class="btn-academy-secondary btn-sm-compact js-mark-read" data-nid="${n.id}">Mark Read</button>`
+              : '<span class="text-success fw-semibold" style="font-size:0.8rem;">Completed</span>'
+            }
+          </div>
         </div>
-        ${!n.read
-          ? `<button type="button" class="btn-academy-secondary btn-sm-compact js-mark-read" data-nid="${n.id}">Mark Read</button>`
-          : '<span class="text-success fw-semibold" style="font-size:0.8rem;">Read</span>'
-        }
+        <h4 class="notif-title">${n.title}</h4>
+        <p class="notif-message">${n.message}</p>
       </div>
     `).join('');
 
