@@ -1940,6 +1940,8 @@ body:has(#playerRegisterForm) .back-to-top-btn {
   color: var(--text-primary);
   text-decoration: none;
   transition: all var(--transition-fast);
+  min-height: 84px;
+  height: 100%;
 }
 
 .social-channel-card:hover {

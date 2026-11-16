@@ -167,16 +167,16 @@ window.RSA_DATA = (function () {
       specialties: ['Raiding Mechanics', 'Corner & Cover Defense', 'Do-or-Die Raid Tactics']
     },
     {
-      id: 'coach-bindu',
-      name: 'Coach Bindu Nair',
+      id: 'coach-narendra',
+      name: 'Coach Narendra Kshatriya',
       role: 'Head Kho-Kho Coach',
       category: 'Kho-Kho',
-      experience: '13+ Years Coaching Experience (Demo Profile)',
-      qualification: 'NSNIS Diploma in Kho-Kho & Track Speed • Federation Referee',
-      background: 'Two-time Senior National Kho-Kho gold medalist known for pioneering ultra-fast pole-dive transitions and 3-2-3 ring defense patterns.',
-      philosophy: 'In Kho-Kho, every fraction of a second counts. Sharp peripheral vision, silent anticipation, and fearless dives turn runners into unstoppable chasers.',
-      image: 'assets/images/coach-khokho.jpg',
-      specialties: ['Pole Dive Mastery', 'Zigzag Evasion', 'Speed & Reflex Conditioning']
+      experience: '14+ Years Coaching Experience (Demo Profile)',
+      qualification: 'NSNIS Diploma in Kho-Kho & Track Speed • Senior Federation Official',
+      background: 'Distinguished coach and sports mentor known for developing tactical agility, precision pole-dive transitions, and championship squad discipline.',
+      philosophy: 'In Kho-Kho, split-second anticipation, court awareness, and fearless dives turn runners into champions.',
+      image: 'assets/images/coach-narendra.webp',
+      specialties: ['Pole Dive Mastery', 'Court Movement', 'Speed & Reflex Conditioning']
     },
     {
       id: 'coach-raghav',
